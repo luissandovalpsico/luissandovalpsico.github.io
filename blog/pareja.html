@@ -641,6 +641,15 @@
   .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
   .lang-switch button:hover { color: var(--text); }
   .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+
+  /* Número + título del paso dentro del mismo encabezado */
+  .prose h2.step-head { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+  .prose h2.step-head .step {
+    display: block; margin-bottom: 0.45rem; font-family: var(--sans);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent-dark);
+  }
+  .prose h2.step-head .step-title { display: block; font-family: var(--serif); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -676,13 +685,13 @@
 
     <h2 data-es="Por qué se repite la misma pelea" data-en="Why the same fight keeps happening">Por qué se repite la misma pelea</h2>
 
-    <p>
+    <p data-es="Las parejas no discuten al azar. Con el tiempo se instala un patrón: una secuencia bastante predecible en la que cada uno reacciona al anterior. Suele tener tres piezas." data-en="Couples don't argue at random. Over time a pattern settles in: a fairly predictable sequence in which each person reacts to the previous move. It usually has three parts.">
       Las parejas no discuten al azar. Con el tiempo se instala un
       <strong>patrón</strong>: una secuencia bastante predecible en la que cada uno
       reacciona al anterior. Suele tener tres piezas.
     </p>
 
-    <p>
+    <p data-es="La primera es un intento de conexión que se expresa como reproche. «Nunca estás» a menudo significa «te echo de menos y no sé cómo pedirlo». La segunda es la respuesta defensiva: justificarse, cerrarse o atacar de vuelta. La tercera es el silencio: alguien se retira, la conversación se queda a medias y se cierra sin resolver nada." data-en="The first is an attempt at connection expressed as a complaint. «You're never here» often means «I miss you and I don't know how to ask». The second is the defensive response: justifying, shutting down or striking back. The third is silence: one of you withdraws, the conversation stays half-finished and closes without resolving anything.">
       La primera es un <strong>intento de conexión que se expresa como reproche</strong>.
       «Nunca estás» a menudo significa «te echo de menos y no sé cómo pedirlo».
       La segunda es la <strong>respuesta defensiva</strong>: justificarse, cerrarse
@@ -715,7 +724,7 @@
 
     <h2 data-es="Tres cosas que puedes hacer esta misma semana" data-en="Three things you can do this week">Tres cosas que puedes hacer esta misma semana</h2>
 
-    <h2 data-es="Nombrar el patrón, no a la persona" data-en="Name the pattern, not the person"><h2><span class="step" data-es="Uno" data-en="One">Uno</span>Nombrar el patrón, no a la persona</h2>
+    <h2 class="step-head" id="pareja-step-1"><span class="step" data-es="Uno" data-en="One">Uno</span><span class="step-title" data-es="Nombrar el patrón, no a la persona" data-en="Name the pattern, not the person">Nombrar el patrón, no a la persona</span></h2>
 
     <p data-es="En un momento tranquilo —no en mitad de una pelea— prueba a decir algo así: «Me he dado cuenta de que siempre terminamos igual: uno pide, el otro se cierra, y los dos nos quedamos mal. No te lo digo para culparte, te lo digo porque quiero salir de ahí»." data-en="In a calm moment —not mid-fight— try saying something like: «I've noticed we always end up the same way: one of us asks, the other shuts down, and we both feel bad. I'm not saying it to blame you, I'm saying it because I want out of there».">
       En un momento tranquilo —no en mitad de una pelea— prueba a decir algo así:
@@ -729,7 +738,7 @@
       defensa. Nadie se está defendiendo de una acusación porque no hay acusación.
     </p>
 
-    <h2 data-es="Pedir lo que quieres, no lo que no quieres" data-en="Ask for what you want, not what you don't"><h2><span class="step" data-es="Dos" data-en="Two">Dos</span>Pedir lo que quieres, no lo que no quieres</h2>
+    <h2 class="step-head" id="pareja-step-2"><span class="step" data-es="Dos" data-en="Two">Dos</span><span class="step-title" data-es="Pedir lo que quieres, no lo que no quieres" data-en="Ask for what you want, not what you don't">Pedir lo que quieres, no lo que no quieres</span></h2>
 
     <p data-es="«No me escuchas» es una queja. «Cuando llegas y me cuentas cómo te ha ido el día antes de mirar el móvil, me siento importante» es una petición. La segunda se puede cumplir; la primera, no." data-en="«You don't listen to me» is a complaint. «When you come home and tell me about your day before checking your phone, I feel important» is a request. The second can be met; the first cannot.">
       «No me escuchas» es una queja. «Cuando llegas y me cuentas cómo te ha ido el
@@ -741,7 +750,7 @@
       Es más difícil de decir, porque pide exponerse. También funciona mejor.
     </p>
 
-    <h2 data-es="Bajar el ritmo antes de la cuarta frase" data-en="Slow down before the fourth sentence"><h2><span class="step" data-es="Tres" data-en="Three">Tres</span>Bajar el ritmo antes de la cuarta frase</h2>
+    <h2 class="step-head" id="pareja-step-3"><span class="step" data-es="Tres" data-en="Three">Tres</span><span class="step-title" data-es="Bajar el ritmo antes de la cuarta frase" data-en="Slow down before the fourth sentence">Bajar el ritmo antes de la cuarta frase</span></h2>
 
     <p data-es="Cuando la conversación se acelera, el cerebro deja de escuchar y empieza a preparar la réplica. Una señal pactada —levantar la mano, decir una palabra concreta, pedir cinco minutos— permite parar sin que nadie sienta que está cediendo. Cuanto antes se frena, más fácil se recupera." data-en="When a conversation speeds up, the brain stops listening and starts preparing its reply. An agreed signal —a raised hand, a specific word, asking for five minutes— lets you stop without anyone feeling they are giving in. The earlier you brake, the easier it is to recover.">
       Cuando la conversación se acelera, el cerebro deja de escuchar y empieza a
@@ -799,7 +808,7 @@
       sino de las herramientas que tengáis para hablar cuando el tema escuece.
     </p>
 
-    <p class="note">
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias. Si en algún momento estás en riesgo, acude a los servicios sanitarios de tu país." data-en="This article is for general information and does not replace a professional assessment or emergency care. If you are ever at risk, contact the health services in your country.">
       Este texto tiene carácter divulgativo y no sustituye a una evaluación
       profesional ni a la atención de un servicio de urgencias. Si en algún momento
       estás en riesgo, acude a los servicios sanitarios de tu país.
@@ -811,16 +820,16 @@
       <p data-es="Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente." data-en="When the wear comes with constant worry, these two readings are usually the next step.">Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente.</p>
       <ul>
         <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</a></li>
-        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html" data-es="Terapia online: qué pasa realmente en la primera sesión" data-en="Online therapy: what really happens in the first session">Terapia online: qué pasa realmente en la primera sesión</a></li>
       </ul>
     </div>
 
     <div class="cta-box">
       <h2 data-es="Si las conversaciones ya no llegan" data-en="If conversations no longer get through">Si las conversaciones ya no llegan</h2>
       <p data-es="Podemos trabajar el patrón que se repite, en sesiones de 50 minutos, a tu ritmo." data-en="We can work on the pattern that repeats, in 50-minute sessions, at your pace.">Podemos trabajar el patrón que se repite, en sesiones de 50 minutos, a tu ritmo.</p>
-      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
       <p style="margin-top:1rem;font-size:0.85rem;">
-        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
       </p>
     </div>
   </article>
