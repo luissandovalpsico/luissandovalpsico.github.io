@@ -1,4 +1,19 @@
+# robots.txt — Luis Sandoval, Psicología
+# Se permite explícitamente el rastreo de todos los buscadores.
+
 User-agent: *
+Allow: /
+
+# Googlebot no debe entrar en ningún directorio ni recurso de esta web
+User-agent: Googlebot
+Allow: /
+Disallow:
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Crawl-delay no se admite en Google, pero ayuda en otros rastreadores
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://luissandovalpsico.github.io/sitemap.xml
