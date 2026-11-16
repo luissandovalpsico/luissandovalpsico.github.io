@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vanafate1984-ship-it.github.io/psicologia/sitemap.xml
