@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo saber si necesitas terapia (y cómo elegir al profesional adecuado) — Luis Sandoval, psicólogo</title>
+<meta name="description" content="Señales que indican que la terapia podría ayudarte y criterios concretos para elegir profesional.">
+<meta name="author" content="Luis Sandoval">
+<link rel="canonical" href="https://luissandovalpsico.github.io/blog/necesito-terapia.html">
+<meta property="og:title" content="Cómo saber si necesitas terapia (y cómo elegir al profesional adecuado)">
+<meta property="og:description" content="Señales que indican que la terapia podría ayudarte y criterios concretos para elegir profesional.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luissandovalpsico.github.io/blog/necesito-terapia.html">
+<meta property="og:site_name" content="Luis Sandoval — Psicología">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     TOKENS DE DISEÑO
+     ========================================================= */
+  :root {
+    --bg: #F9F8F6;          /* blanco roto cálido */
+    --text: #333333;        /* gris oscuro */
+    --text-soft: #6b6b68;   /* texto secundario */
+    --accent: #8A9A5B;      /* verde salvia */
+    --accent-dark: #6f7d47;
+    --line: #e3e0d9;
+    --card: #fdfdfc;
+    --serif: "Lora", Georgia, serif;
+    --sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1080px;
+    --radius: 4px;
+  }
+
+  /* =========================================================
+     BASE
+     ========================================================= */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* Contenedor común */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Secciones: mucho aire entre bloques */
+  section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+
+  /* Etiqueta pequeña de sección */
+  .eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* Línea fina de acento */
+  .hairline {
+    width: 48px;
+    height: 1px;
+    border: 0;
+    margin: 0 0 2rem;
+    background: var(--accent);
+  }
+
+  /* =========================================================
+     BOTONES
+     ========================================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    min-height: 52px;                 /* zona táctil cómoda */
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(138, 154, 91, 0.22);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+  }
+
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     HEADER / HERO
+     ========================================================= */
+  header.hero {
+    padding: clamp(4.5rem, 11vw, 9rem) 0 clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .hero-inner { max-width: 720px; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    margin-bottom: 1.6rem;
+  }
+
+  .hero .lead {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 300;
+    color: var(--text-soft);
+    max-width: 56ch;
+    margin-bottom: 2.4rem;
+  }
+
+  /* Detalle suave: marca de agua tipográfica opcional a la derecha */
+  .hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  .hero-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+  /* Punto verde de acento */
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  /* =========================================================
+     CÓMO FUNCIONA
+     ========================================================= */
+  .steps {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  }
+
+  .step { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+
+  .step .num {
+    display: block;
+    margin-bottom: 0.9rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .step h3 { font-size: 1.25rem; margin-bottom: 0.7rem; }
+
+  .step p { font-size: 0.95rem; font-weight: 300; color: var(--text-soft); }
+
+  /* =========================================================
+     ESPECIALIDADES
+     ========================================================= */
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card {
+    padding: 2rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+  .card p { font-size: 0.94rem; font-weight: 300; color: var(--text-soft); }
+
+  .card .tag {
+    display: block;
+    margin-top: 1.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     SOBRE MÍ
+     ========================================================= */
+  .about {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .about { grid-template-columns: 320px 1fr; gap: 4rem; }
+  }
+
+  /* Marco de la foto: si no hay imagen, muestra un bloque sobrio */
+  .photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #f1efe9 0%, #e7e4dc 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Imagen: recorte centrado, bordes suaves, sin distorsión */
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* recorta para llenar el marco 4:5 */
+    object-position: center 30%; /* ligeramente alto: encuadre del rostro */
+    border-radius: var(--radius);
+    display: block;
+  }
+
+  /* Texto de relleno cuando aún no hay foto */
+  .photo .placeholder {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a9a69d;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* El placeholder desaparece en cuanto exista la imagen */
+  .photo:has(img) .placeholder { display: none; }
+
+  .about h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.3rem; }
+
+  .about p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.1rem; }
+
+  .about .signature {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text);
+    margin-top: 1.6rem;
+  }
+
+  /* =========================================================
+     TESTIMONIOS
+     ========================================================= */
+  .quotes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 860px) {
+    .quotes { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1.75rem;
+    border-left: 2px solid var(--accent);
+    background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  blockquote p {
+    font-family: var(--serif);
+    font-size: 1.03rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  blockquote footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     TARIFAS Y MODALIDAD
+     ========================================================= */
+  .fees {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  @media (min-width: 780px) {
+    .fees { grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+  }
+
+  .fees-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 780px) {
+    .fees-price { border-bottom: 0; border-right: 1px solid var(--line); padding: 0 2rem 0 0; }
+  }
+
+  .fees-amount {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--accent-dark);
+    line-height: 1;
+  }
+
+  .fees-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .fees-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+
+  .fees-list li { display: grid; gap: 0.15rem; }
+
+  .fees-list strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .fees-list span {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  .fees-note {
+    margin-top: 1.4rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     FAQ (acordeón con <details>, sin JS necesario)
+     ========================================================= */
+  .faq { max-width: 780px; }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.35rem 0;
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.25s ease;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary:hover { color: var(--accent-dark); }
+
+  /* Signo + / − dibujado en CSS */
+  .faq summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+  }
+
+  .faq details[open] summary::after { transform: rotate(-135deg); }
+
+  .faq .answer {
+    padding: 0 2rem 1.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     CIERRE / CTA FINAL
+     ========================================================= */
+  .closing {
+    text-align: center;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
+    background: #f3f1ec;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .closing h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    margin-bottom: 1rem;
+  }
+
+  .closing p {
+    color: var(--text-soft);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer.site {
+    padding: 3rem 0 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  footer.site .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer.site a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Enlaces a proyectos hermanos: discretos, separados del bloque legal */
+  footer.site .siblings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer.site .siblings span { color: #a9a69d; }
+
+  footer.site a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
+
+  footer.site .legal { font-size: 0.75rem; color: #93908a; }
+
+  /* =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     ========================================================= */
+  .wa {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(60, 70, 35, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .wa:hover { background: var(--accent-dark); transform: scale(1.06); }
+
+  .wa svg { width: 27px; height: 27px; fill: #fff; }
+
+  /* Etiqueta accesible solo para lectores de pantalla */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     APARICIÓN SUAVE AL HACER SCROLL (mejora progresiva)
+     ========================================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+
+  /* =========================================================
+     LISTA DE ARTÍCULOS DEL BLOG
+     ========================================================= */
+  .articles { display: grid; gap: 0; border-top: 1px solid var(--line); }
+
+  .article-row {
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  @media (min-width: 760px) {
+    .article-row { grid-template-columns: 120px 1fr auto; align-items: baseline; }
+  }
+
+  .article-row .date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  .article-row h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.3s ease;
+  }
+
+  .article-row:hover h3 { color: var(--accent-dark); }
+
+  .article-row .more {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     CONMUTADOR DE IDIOMA
+     ========================================================= */
+  .lang-switch {
+    position: fixed;
+    top: 0.85rem;
+    right: 0.85rem;
+    z-index: 60;
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0.5rem 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+
+  /* Badge de idiomas del hero */
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-dark);
+    background: rgba(138, 154, 91, 0.07);
+  }
+
+  .lang-badge svg { width: 14px; height: 14px; fill: currentColor; flex: 0 0 auto; }
+
+  /* ===== Artículo ===== */
+  .article-head { padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.2rem, 3vw, 2rem); }
+  .article-head h1 { font-size: clamp(1.85rem, 4.2vw, 2.9rem); max-width: 24ch; margin-bottom: 1.3rem; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); }
+  .article-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .prose { max-width: 68ch; padding-bottom: clamp(2rem, 5vw, 3rem); }
+  .prose p { font-size: 1.04rem; font-weight: 300; line-height: 1.85; color: #43413e; margin-bottom: 1.4rem; }
+  .prose h2 { font-size: clamp(1.28rem, 2.5vw, 1.55rem); margin: 2.8rem 0 1rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line); }
+  .prose h2 .step { display: block; margin-bottom: 0.45rem; font-family: var(--sans); font-size: 0.68rem;
+    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-dark); }
+  .prose h3 { font-size: 1.08rem; margin: 1.9rem 0 0.7rem; }
+  .prose ul { margin: 0 0 1.4rem; padding-left: 1.2rem; }
+  .prose li { font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: #43413e; margin-bottom: 0.55rem; }
+  .prose strong { font-weight: 600; color: var(--text); }
+  .prose blockquote { margin: 1.8rem 0; background: #f3f1ec; }
+  .note { margin: 2.4rem 0 0; padding: 1.3rem 1.5rem; border: 1px solid var(--line);
+    border-radius: var(--radius); font-size: 0.86rem; font-weight: 300; line-height: 1.7;
+    color: var(--text-soft); background: var(--card); }
+  .backlink { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1.6rem 0 0;
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-soft); text-decoration: none; transition: color 0.3s ease; }
+  .backlink:hover { color: var(--accent-dark); }
+  .cta-box { margin-top: 3rem; padding: clamp(1.8rem, 4vw, 2.6rem); background: #f3f1ec;
+    border-radius: var(--radius); text-align: center; }
+  .cta-box h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-bottom: 0.8rem; border: 0; padding-top: 0; }
+  .cta-box p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.6rem; }
+  .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .related h2 { font-size: 1rem !important; margin: 0 0 1rem !important; padding: 0 !important;
+    border: 0 !important; font-family: var(--sans); font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent-dark); }
+  .related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+  .related li a { display: block; padding: 1rem 1.2rem; text-decoration: none; background: var(--card);
+    border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--serif);
+    font-size: 1.02rem; line-height: 1.5; color: var(--text);
+    transition: border-color 0.3s ease, color 0.3s ease; }
+  .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+  /* ===== Conmutador de idioma ===== */
+  .lang-switch {
+    position: fixed; top: 0.85rem; right: 0.85rem; z-index: 60;
+    display: flex; border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; padding: 0.5rem 0.8rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--text-soft); cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
+  <header class="article-head">
+    <div class="wrap">
+      <a class="backlink" href="https://luissandovalpsico.github.io/">← <span data-es="Volver al inicio" data-en="Back to home">Volver al inicio</span></a>
+      <span class="eyebrow" style="margin-top:2rem;" data-es="Terapia" data-en="Therapy">Terapia</span>
+      <h1 data-es="Cómo saber si necesitas terapia (y cómo elegir al profesional adecuado)" data-en="How to know if you need therapy (and how to choose the right professional)">Cómo saber si necesitas terapia (y cómo elegir al profesional adecuado)</h1>
+      <div class="article-meta">
+        <span data-es="Lectura de 7 minutos" data-en="7-minute read">Lectura de 7 minutos</span>
+        <span data-es="Por Luis Sandoval, psicólogo" data-en="By Luis Sandoval, psychologist">Por Luis Sandoval, psicólogo</span>
+      </div>
+      <hr class="hairline" style="margin-top:2rem;">
+    </div>
+  </header>
+
+  <article class="wrap prose" data-lang-block="es">
+
+    <p>
+      La pregunta «¿necesito terapia?» casi nunca llega sola. Suele venir con una
+      segunda pregunta detrás, más silenciosa: «¿y si estoy exagerando?».
+    </p>
+    <p>
+      Voy a responder a las dos, y empiezo por la segunda porque es la que más
+      paraliza.
+    </p>
+    <h2>No hace falta estar mal para empezar</h2>
+    <p>
+      La terapia no es el último recurso de una crisis. Es un espacio de trabajo
+      sobre uno mismo, y hay motivos legítimos para entrar en él que no son un
+      diagnóstico: entender por qué repites ciertas relaciones, decidir un cambio
+      de vida sin hacerlo desde el miedo, o simplemente dejar de funcionar en
+      automático.
+    </p>
+    <p>
+      Dicho eso, hay señales que sí conviene no dejar pasar. No son criterios
+      diagnósticos —eso requiere una evaluación— pero funcionan como aviso.
+    </p>
+    <h2>Señales que merecen atención</h2>
+    <ul>
+      <li>El malestar se ha vuelto <strong>constante</strong>, no algo que aparece y se va.</li>
+      <li>Está afectando a <strong>áreas concretas</strong>: dormir, comer, trabajar, relacionarte.</li>
+      <li>Llevas tiempo <strong>intentándolo solo</strong> con estrategias que ya no funcionan.</li>
+      <li>Hay un <strong>malestar físico</strong> persistente que tu médico no logra explicar.</li>
+      <li>Empiezas a <strong>aislarte</strong> o a evitar situaciones que antes no te costaban.</li>
+      <li>Alguien de confianza te ha dicho, más de una vez, que te nota distinto.</li>
+    </ul>
+    <p>
+      Si te reconoces en dos o tres de estos puntos, no significa que tengas un
+      trastorno. Significa que tienes algo que merece ser mirado con ayuda.
+    </p>
+    <blockquote>
+      <p>«Pedir ayuda a tiempo no es debilidad; es la forma más eficiente de dejar de cargar con algo que no deberías cargar solo.»</p>
+    </blockquote>
+    <h2>Cómo elegir al profesional adecuado</h2>
+    <p>
+      Aquí sí merece la pena ser exigente, porque no todos los profesionales
+      trabajan igual y una mala experiencia inicial puede convencerte de que «la
+      terapia no es para ti» cuando el problema era el encaje.
+    </p>
+    <h3>Comprueba la formación</h3>
+    <p>
+      Titulación en Psicología y formación específica en psicoterapia. «Coach»,
+      «terapeuta» o «acompañante» sin más no son títulos regulados: pregunta
+      siempre qué formación acredita a la persona que te atiende.
+    </p>
+    <h3>Pregunta por el enfoque y el encuadre</h3>
+    <p>
+      Un profesional serio te dirá en la primera conversación cómo trabaja, cuánto
+      dura una sesión, con qué frecuencia propone verse y cuándo revisaréis si está
+      funcionando. Si no hay encuadre, no hay proceso.
+    </p>
+    <h3>Fíjate en cómo te hace sentir</h3>
+    <p>
+      La relación terapéutica es la variable que más predice el resultado. No buscas
+      a alguien que te caiga bien necesariamente, sino a alguien con quien puedas
+      decir «no estoy de acuerdo» sin miedo.
+    </p>
+    <h3>Desconfía de las promesas absolutas</h3>
+    <p>
+      «En tres sesiones lo resolvemos», «método infalible», «garantizado». Ningún
+      profesional honesto puede prometer eso, porque el resultado depende de
+      demasiadas variables.
+    </p>
+    <h2>La primera sesión también sirve para descartar</h2>
+    <p>
+      No tienes que comprometerte con un proceso largo desde el principio. Una
+      primera sesión es, entre otras cosas, una forma de comprobar si esa persona
+      y ese modo de trabajar encajan contigo. Si no encajan, se dice y se busca otra.
+    </p>
+    <p>
+      Eso no es perder el tiempo: es evitar meses de trabajo con una alianza que no
+      funcionaba desde el principio.
+    </p>
+
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias."
+       data-en="This article is for general information and does not replace a professional assessment or emergency care.">
+      Este texto tiene carácter divulgativo y no sustituye a una evaluación
+      profesional ni a la atención de un servicio de urgencias.
+    </p>
+
+    <div class="related">
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <ul>
+        <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa en la primera sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h2 data-es="Si te reconoces en algo de esto" data-en="If any of this sounds familiar">Si te reconoces en algo de esto</h2>
+      <p data-es="Sesión de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañña." data-en="50-minute session, online from any country or in person in Santa Elena, Salinas, Olón and Montañita.">Sesión de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañña.</p>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
+      <p style="margin-top:1rem;font-size:0.85rem;">
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="wrap prose" data-lang-block="en" hidden>
+
+    <p>
+      The question «do I need therapy?» rarely arrives alone. It usually comes with
+      a second, quieter question behind it: «and what if I'm exaggerating?».
+    </p>
+    <p>
+      I'll answer both, starting with the second because it is the one that
+      paralyses people most.
+    </p>
+    <h2>You don't have to be unwell to start</h2>
+    <p>
+      Therapy is not the last resort of a crisis. It is a space to work on yourself,
+      and there are legitimate reasons to enter it that are not a diagnosis:
+      understanding why you repeat certain relationships, making a life change
+      without doing it from fear, or simply stopping running on autopilot.
+    </p>
+    <p>
+      That said, there are signals worth not ignoring. They are not diagnostic
+      criteria —that requires an assessment— but they work as warnings.
+    </p>
+    <h2>Signals worth attention</h2>
+    <ul>
+      <li>The discomfort has become <strong>constant</strong>, not something that comes and goes.</li>
+      <li>It is affecting <strong>specific areas</strong>: sleep, eating, work, relationships.</li>
+      <li>You have spent time <strong>trying alone</strong> with strategies that no longer work.</li>
+      <li>There is a <strong>persistent physical discomfort</strong> your doctor cannot explain.</li>
+      <li>You are starting to <strong>isolate yourself</strong> or avoid situations that used to be easy.</li>
+      <li>Someone you trust has told you, more than once, that you seem different.</li>
+    </ul>
+    <p>
+      If you recognise yourself in two or three of these, it doesn't mean you have
+      a disorder. It means you have something worth looking at with help.
+    </p>
+    <blockquote>
+      <p>«Asking for help in time is not weakness; it is the most efficient way to stop carrying something you should not be carrying alone.»</p>
+    </blockquote>
+    <h2>How to choose the right professional</h2>
+    <p>
+      Here it is worth being demanding, because not all professionals work the same
+      way, and a bad first experience can convince you that «therapy isn't for me»
+      when the problem was the fit.
+    </p>
+    <h3>Check the training</h3>
+    <p>
+      A degree in Psychology and specific training in psychotherapy. «Coach»,
+      «therapist» or «companion» on their own are not regulated titles: always ask
+      what training accredits the person seeing you.
+    </p>
+    <h3>Ask about the approach and the framework</h3>
+    <p>
+      A serious professional will tell you in the first conversation how they work,
+      how long a session lasts, how often they propose meeting, and when you will
+      review whether it is working.
+    </p>
+    <h3>Notice how they make you feel</h3>
+    <p>
+      The therapeutic relationship is the variable that best predicts the outcome.
+      You are not looking for someone you necessarily like, but for someone with
+      whom you can say «I disagree» without fear.
+    </p>
+    <h3>Be wary of absolute promises</h3>
+    <p>
+      «We'll solve it in three sessions», «foolproof method», «guaranteed». No
+      honest professional can promise that, because the outcome depends on too many
+      variables.
+    </p>
+    <h2>The first session also serves to rule out</h2>
+    <p>
+      You don't have to commit to a long process from the start. A first session is,
+      among other things, a way of checking whether that person and that way of
+      working fit you. If they don't, you say so and look for another.
+    </p>
+
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias."
+       data-en="This article is for general information and does not replace a professional assessment or emergency care.">
+      Este texto tiene carácter divulgativo y no sustituye a una evaluación
+      profesional ni a la atención de un servicio de urgencias.
+    </p>
+
+    <div class="related">
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <ul>
+        <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa en la primera sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h2 data-es="Si te reconoces en algo de esto" data-en="If any of this sounds familiar">Si te reconoces en algo de esto</h2>
+      <p data-es="Sesión de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañña." data-en="50-minute session, online from any country or in person in Santa Elena, Salinas, Olón and Montañita.">Sesión de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañña.</p>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
+      <p style="margin-top:1rem;font-size:0.85rem;">
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
+      </p>
+    </div>
+  </article>
+
+  <footer class="site">
+    <div class="wrap inner">
+      <span>© 2026 Luis Sandoval · Psicología</span>
+      <span><a href="mailto:luissandovalpsico2.0@gmail.com">luissandovalpsico2.0@gmail.com</a></span>
+      <span class="legal" data-es="Aviso legal · Privacidad" data-en="Legal notice · Privacy">Aviso legal · Privacidad</span>
+    </div>
+    <div class="wrap siblings">
+      <span data-es="Proyecto hermano:" data-en="Sister project:">Proyecto hermano:</span>
+      <a href="https://luissandovalpsico.github.io/gourmet-restaurant/" target="_blank" rel="noopener">Fuego &amp; Raíz</a>
+      <a href="https://luissandovalpsico.github.io/documental/" target="_blank" rel="noopener">The Heart of the Beast</a>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/573135578578" aria-label="Escribir por WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"/></svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <script>
+  (function () {
+    const bEs = document.getElementById('btn-es'), bEn = document.getElementById('btn-en');
+    const bloques = document.querySelectorAll('[data-lang-block]');
+    function aplicar(lang) {
+      bloques.forEach(b => { b.hidden = b.getAttribute('data-lang-block') !== lang; });
+      document.querySelectorAll('header [data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      document.documentElement.lang = lang;
+      bEs.setAttribute('aria-pressed', lang === 'es');
+      bEn.setAttribute('aria-pressed', lang === 'en');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    bEs.addEventListener('click', () => aplicar('es'));
+    bEn.addEventListener('click', () => aplicar('en'));
+    let g = 'es';
+    try { g = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (g === 'en') aplicar('en');
+  })();
+  </script>
+
+</body>
+</html>
