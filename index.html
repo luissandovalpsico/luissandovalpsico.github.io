@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terapia online — Un espacio para detenerte, comprenderte y avanzar</title>
+<meta name="description" content="Terapia psicológica online por videoconferencia. Un espacio tranquilo para comprenderte y avanzar a tu ritmo.">
+<meta name="google-site-verification" content="nuzX5K17rL54NqbkODZPNKI4C1lF0Euunrx80CxpuX8" />
+
+<!-- Tipografía: Lora (títulos) + Nunito Sans (textos) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================================
+     TOKENS DE DISEÑO
+     ========================================================= */
+  :root {
+    --bg: #F9F8F6;          /* blanco roto cálido */
+    --text: #333333;        /* gris oscuro */
+    --text-soft: #6b6b68;   /* texto secundario */
+    --accent: #8A9A5B;      /* verde salvia */
+    --accent-dark: #6f7d47;
+    --line: #e3e0d9;
+    --card: #fdfdfc;
+    --serif: "Lora", Georgia, serif;
+    --sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1080px;
+    --radius: 4px;
+  }
+
+  /* =========================================================
+     BASE
+     ========================================================= */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* Contenedor común */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Secciones: mucho aire entre bloques */
+  section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+
+  /* Etiqueta pequeña de sección */
+  .eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* Línea fina de acento */
+  .hairline {
+    width: 48px;
+    height: 1px;
+    border: 0;
+    margin: 0 0 2rem;
+    background: var(--accent);
+  }
+
+  /* =========================================================
+     BOTONES
+     ========================================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    min-height: 52px;                 /* zona táctil cómoda */
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(138, 154, 91, 0.22);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+  }
+
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     HEADER / HERO
+     ========================================================= */
+  header.hero {
+    padding: clamp(4.5rem, 11vw, 9rem) 0 clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .hero-inner { max-width: 720px; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    margin-bottom: 1.6rem;
+  }
+
+  .hero .lead {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 300;
+    color: var(--text-soft);
+    max-width: 56ch;
+    margin-bottom: 2.4rem;
+  }
+
+  /* Detalle suave: marca de agua tipográfica opcional a la derecha */
+  .hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  .hero-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+  /* Punto verde de acento */
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  /* =========================================================
+     CÓMO FUNCIONA
+     ========================================================= */
+  .steps {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  }
+
+  .step { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+
+  .step .num {
+    display: block;
+    margin-bottom: 0.9rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .step h3 { font-size: 1.25rem; margin-bottom: 0.7rem; }
+
+  .step p { font-size: 0.95rem; font-weight: 300; color: var(--text-soft); }
+
+  /* =========================================================
+     ESPECIALIDADES
+     ========================================================= */
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card {
+    padding: 2rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+  .card p { font-size: 0.94rem; font-weight: 300; color: var(--text-soft); }
+
+  .card .tag {
+    display: block;
+    margin-top: 1.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     SOBRE MÍ
+     ========================================================= */
+  .about {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .about { grid-template-columns: 320px 1fr; gap: 4rem; }
+  }
+
+  /* Marco de la foto: si no hay imagen, muestra un bloque sobrio */
+  .photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #f1efe9 0%, #e7e4dc 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Texto de relleno cuando aún no hay foto */
+  .photo .placeholder {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a9a69d;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .about h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.3rem; }
+
+  .about p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.1rem; }
+
+  .about .signature {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text);
+    margin-top: 1.6rem;
+  }
+
+  /* =========================================================
+     TESTIMONIOS
+     ========================================================= */
+  .quotes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 860px) {
+    .quotes { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1.75rem;
+    border-left: 2px solid var(--accent);
+    background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  blockquote p {
+    font-family: var(--serif);
+    font-size: 1.03rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  blockquote footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     FAQ (acordeón con <details>, sin JS necesario)
+     ========================================================= */
+  .faq { max-width: 780px; }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.35rem 0;
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.25s ease;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary:hover { color: var(--accent-dark); }
+
+  /* Signo + / − dibujado en CSS */
+  .faq summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+  }
+
+  .faq details[open] summary::after { transform: rotate(-135deg); }
+
+  .faq .answer {
+    padding: 0 2rem 1.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     CIERRE / CTA FINAL
+     ========================================================= */
+  .closing {
+    text-align: center;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
+    background: #f3f1ec;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .closing h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    margin-bottom: 1rem;
+  }
+
+  .closing p {
+    color: var(--text-soft);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer.site {
+    padding: 3rem 0 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  footer.site .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer.site a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  footer.site a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
+
+  footer.site .legal { font-size: 0.75rem; color: #93908a; }
+
+  /* =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     ========================================================= */
+  .wa {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(60, 70, 35, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .wa:hover { background: var(--accent-dark); transform: scale(1.06); }
+
+  .wa svg { width: 27px; height: 27px; fill: #fff; }
+
+  /* Etiqueta accesible solo para lectores de pantalla */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     APARICIÓN SUAVE AL HACER SCROLL (mejora progresiva)
+     ========================================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+</style>
+
+<!-- ===================== REDES SOCIALES ===================== -->
+<meta property="og:title" content="Terapia online — Luis Sandoval, psicólogo">
+<meta property="og:description" content="Un espacio para detenerte, comprenderte y avanzar. Terapia psicológica online por videoconferencia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vanafate1984-ship-it.github.io/psicologia/">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ===================== DATOS ESTRUCTURADOS (Schema.org) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://vanafate1984-ship-it.github.io/psicologia/#person",
+      "name": "Luis Sandoval",
+      "jobTitle": "Psicólogo",
+      "description": "Psicólogo online. Licenciado en Psicología, postgrado en Psicoterapia. Acompaña a personas adultas en procesos de ansiedad, relaciones y autoconocimiento mediante terapia por videoconferencia.",
+      "knowsAbout": ["Terapia online", "Ansiedad", "Relaciones", "Autoconocimiento", "Psicoterapia"],
+      "knowsLanguage": "es",
+      "email": "mailto:luissandovalpsico2.0@gmail.com",
+      "telephone": "+573135578578",
+      "url": "https://vanafate1984-ship-it.github.io/psicologia/",
+      "worksFor": { "@id": "https://vanafate1984-ship-it.github.io/psicologia/#business" }
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://vanafate1984-ship-it.github.io/psicologia/#business",
+      "name": "Luis Sandoval — Psicología",
+      "description": "Terapia psicológica online por videoconferencia: ansiedad, relaciones y autoconocimiento.",
+      "url": "https://vanafate1984-ship-it.github.io/psicologia/",
+      "image": "https://vanafate1984-ship-it.github.io/psicologia/og-image.png",
+      "email": "luissandovalpsico2.0@gmail.com",
+      "telephone": "+573135578578",
+      "priceRange": "25 USD por sesión",
+      "currenciesAccepted": "USD",
+      "availableLanguage": "es",
+      "medicalSpecialty": "Psychiatric",
+      "areaServed": { "@type": "Place", "name": "Online" },
+      "availableService": {
+        "@type": "MedicalTherapy",
+        "name": "Psicoterapia online",
+        "description": "Sesiones de 50 minutos por videoconferencia."
+      },
+      "founder": { "@id": "https://vanafate1984-ship-it.github.io/psicologia/#person" },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Sesión de psicoterapia online" },
+        "price": "25",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+  <!-- ===================== HEADER / HERO ===================== -->
+  <header class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow">Terapia psicológica online</span>
+        <h1>Un espacio para detenerte, comprenderte y avanzar</h1>
+        <p class="lead">
+          Sesiones por videoconferencia, desde donde estés. Un lugar tranquilo
+          para hablar sin prisa, entender lo que te pasa y encontrar tu propio
+          ritmo para avanzar.
+        </p>
+        <a class="btn btn-primary" href="#contacto">Solicitar primera consulta</a>
+
+        <div class="hero-meta">
+          <span><i class="dot"></i> Videoconferencia</span>
+          <span><i class="dot"></i> Adultos</span>
+          <span><i class="dot"></i> Primera consulta sin compromiso</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== CÓMO FUNCIONA ===================== -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <span class="eyebrow">Cómo funciona</span>
+      <hr class="hairline">
+      <h2 class="reveal">Tres pasos sencillos</h2>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">01</span>
+          <h3>Agenda</h3>
+          <p>Escríbeme y elegimos juntos un día y una hora que te vengan bien. Sin formularios largos.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">02</span>
+          <h3>Conéctate</h3>
+          <p>El día de la sesión recibes un enlace. Solo necesitas un sitio tranquilo y conexión a internet.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">03</span>
+          <h3>Empecemos</h3>
+          <p>Hablamos de lo que te trae aquí, sin prisa, y decidimos juntos cómo seguir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ESPECIALIDADES ===================== -->
+  <section id="especialidades">
+    <div class="wrap">
+      <span class="eyebrow">En qué puedo acompañarte</span>
+      <hr class="hairline">
+      <h2 class="reveal">Especialidades</h2>
+
+      <div class="cards">
+        <article class="card reveal">
+          <h3>Ansiedad</h3>
+          <p>
+            Cuando la preocupación ocupa demasiado espacio: entender qué la activa,
+            qué la mantiene y cómo recuperar cierta calma en el día a día.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Relaciones</h3>
+          <p>
+            Vínculos que cansan, conflictos que se repiten o dificultades para poner
+            límites. Espacio para mirarlos con calma y decidir qué quieres cambiar.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Autoconocimiento</h3>
+          <p>
+            Para quienes no vienen con una queja concreta, sino con la sensación de
+            querer entenderse mejor y vivir de una forma más coherente.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE MÍ ===================== -->
+  <section id="sobre-mi">
+    <div class="wrap">
+      <div class="about">
+        <!-- Sustituye el placeholder por: <img src="foto.jpg" alt="Nombre"> -->
+        <div class="photo reveal">
+          <span class="placeholder">Foto<br>provisional</span>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">Sobre mí</span>
+          <h2>Hola, soy Luis Sandoval</h2>
+          <p>
+            Soy Luis Sandoval, psicólogo. Acompaño a personas adultas que sienten
+            que algo no termina de encajar. Me interesa escuchar de verdad, sin
+            recetas rápidas ni discursos que no sirven para la vida real.
+          </p>
+          <p>
+            Trabajo desde la honestidad y el respeto: no hay dos personas iguales,
+            ni dos procesos iguales. Mi papel es ofrecerte un lugar seguro y
+            acompañarte mientras encuentras tus propias respuestas.
+          </p>
+          <p>
+            Licenciado en Psicología. Postgrado en Psicoterapia.
+          </p>
+          <p class="signature">— Luis Sandoval</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIOS ===================== -->
+  <section id="testimonios">
+    <div class="wrap">
+      <span class="eyebrow">Testimonios</span>
+      <hr class="hairline">
+      <h2 class="reveal">Lo que dicen algunas personas</h2>
+
+      <div class="quotes">
+        <blockquote class="reveal">
+          <p>«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»</p>
+          <footer>— Testimonio anónimo</footer>
+        </blockquote>
+        <blockquote class="reveal">
+          <p>«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»</p>
+          <footer>— Testimonio anónimo</footer>
+        </blockquote>
+        <blockquote class="reveal">
+          <p>«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»</p>
+          <footer>— Testimonio anónimo</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq">
+    <div class="wrap">
+      <span class="eyebrow">Dudas frecuentes</span>
+      <hr class="hairline">
+      <h2 class="reveal" style="margin-bottom:2rem;">Preguntas antes de empezar</h2>
+
+      <div class="faq">
+        <details name="faq">
+          <summary>¿Cuánto cuesta la sesión?</summary>
+          <div class="answer">
+            La sesión tiene un valor de 25 USD (o su equivalente en moneda local).
+            Las tarifas se explican con claridad antes de la primera cita, sin cargos
+            ocultos ni paquetes obligatorios.
+          </div>
+        </details>
+
+        <details name="faq">
+          <summary>¿Lo que hablamos es confidencial?</summary>
+          <div class="answer">
+            Sí. Todo lo que compartes en sesión es confidencial y forma parte del
+            secreto profesional, con las excepciones que marca la ley.
+          </div>
+        </details>
+
+        <details name="faq">
+          <summary>¿Qué necesito para la videoconferencia?</summary>
+          <div class="answer">
+            Un dispositivo con cámara y micrófono, conexión estable a internet y un
+            sitio tranquilo donde no te interrumpan. Te envío el enlace antes de cada
+            sesión; no hace falta instalar nada complicado.
+          </div>
+        </details>
+
+        <details name="faq">
+          <summary>¿Cuánto dura una sesión?</summary>
+          <div class="answer">
+            Las sesiones duran 50 minutos. Si necesitamos otro formato, lo
+            hablamos antes.
+          </div>
+        </details>
+
+        <details name="faq">
+          <summary>¿La terapia online funciona igual que la presencial?</summary>
+          <div class="answer">
+            Para muchas personas sí: la videoconferencia permite el mismo trabajo,
+            con la ventaja de no tener que desplazarte.
+          </div>
+        </details>
+
+        <details name="faq">
+          <summary>¿Qué pasa si necesito cancelar?</summary>
+          <div class="answer">
+            Cancela con al menos 24 horas de antelación. Así podemos reorganizar
+            la agenda sin que pierdas la sesión.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="closing" id="contacto">
+    <span class="eyebrow">Primer paso</span>
+    <h2>Si te resuena, escríbeme</h2>
+    <p>Cuéntame brevemente qué te trae aquí. Te respondo yo, no un formulario automático.</p>
+    <a class="btn btn-primary" href="https://wa.me/573135578578">Solicitar primera consulta</a>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site">
+    <div class="wrap inner">
+      <span>© <span id="year">2026</span> Luis Sandoval · Psicología</span>
+      <span>
+        <a href="mailto:luissandovalpsico2.0@gmail.com">luissandovalpsico2.0@gmail.com</a>
+      </span>
+      <span class="legal">
+        Aviso legal · Privacidad
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===================== BOTÓN FLOTANTE WHATSAPP ===================== -->
+  <a class="wa" href="https://wa.me/573135578578" aria-label="Escribir por WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4c-1-1.7-1.6-3.7-1.6-5.7C5.3 10.1 10.1 5.3 16 5.3S26.7 10.1 26.7 16 21.9 26.6 16 26.6zm6-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.9-.8 2.1-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/>
+    </svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+<script>
+  /* =========================================================
+     1. Año del footer
+     ========================================================= */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* =========================================================
+     2. Acordeón: solo una pregunta abierta a la vez
+     ---------------------------------------------------------
+     Usamos <details name="faq">, que ya agrupa de forma nativa
+     en navegadores modernos. Este pequeño refuerzo lo garantiza
+     también donde esa función no está soportada.
+     ========================================================= */
+  const items = document.querySelectorAll('#faq details');
+  items.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        items.forEach(other => { if (other !== item) other.open = false; });
+      }
+    });
+  });
+
+  /* =========================================================
+     3. Aparición suave al hacer scroll (mejora progresiva)
+     ---------------------------------------------------------
+     Si el navegador no soporta IntersectionObserver, todo se
+     muestra directamente.
+     ========================================================= */
+  const revealables = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealables.forEach(el => observer.observe(el));
+  } else {
+    revealables.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* =========================================================
+     4. Scroll suave para los enlaces internos
+     (refuerzo del scroll-behavior: smooth en CSS)
+     ========================================================= */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const destino = document.querySelector(link.getAttribute('href'));
+      if (!destino) return;
+      e.preventDefault();
+      destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
