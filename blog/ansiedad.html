@@ -641,6 +641,15 @@
   .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
   .lang-switch button:hover { color: var(--text); }
   .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+
+  /* Número + título del paso dentro del mismo encabezado */
+  .prose h2.step-head { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+  .prose h2.step-head .step {
+    display: block; margin-bottom: 0.45rem; font-family: var(--sans);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent-dark);
+  }
+  .prose h2.step-head .step-title { display: block; font-family: var(--serif); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -687,7 +696,7 @@
       recuperar algo de margen.
     </p>
 
-    <h2 data-es="Entender qué te está diciendo" data-en="Understand what it is telling you"><h2><span class="step" data-es="Paso uno" data-en="Step one">Paso uno</span>Entender qué te está diciendo</h2>
+    <h2 class="step-head" id="ansiedad-step-1"><span class="step" data-es="Paso uno" data-en="Step one">Paso uno</span><span class="step-title" data-es="Entender qué te está diciendo" data-en="Understand what it is telling you">Entender qué te está diciendo</span></h2>
 
     <p data-es="La ansiedad casi siempre avisa de algo. A veces acierta: hay una amenaza real, una decisión difícil, una conversación pendiente. Otras veces se equivoca de diana: te avisa de un peligro que ocurrió hace años y que sigue doliendo." data-en="Anxiety almost always gives notice of something. Sometimes it is right: there is a real threat, a difficult decision, a conversation you owe someone. Other times it aims at the wrong target: it warns you about a danger that happened years ago and still hurts.">
       La ansiedad casi siempre avisa de algo. A veces acierta: hay una amenaza
@@ -696,7 +705,7 @@
       doliendo.
     </p>
 
-    <p>
+    <p data-es="El primer paso no es quitarla, es escucharla con algo de distancia. Cuando notes que sube, prueba a hacerte tres preguntas sencillas:" data-en="The first step is not to remove it, but to listen to it from a small distance. When you notice it rising, try three simple questions:">
       El primer paso no es quitarla, es <strong>escucharla con algo de distancia</strong>.
       Cuando notes que sube, prueba a hacerte tres preguntas sencillas:
     </p>
@@ -717,7 +726,7 @@
       <p data-es="«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»" data-en="«Anxiety is not an enemy to defeat; it is a messenger to learn to hear without obeying blindly.»">«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»</p>
     </blockquote>
 
-    <h2 data-es="Bajar el volumen del cuerpo" data-en="Turn the volume down in your body"><h2><span class="step" data-es="Paso dos" data-en="Step two">Paso dos</span>Bajar el volumen del cuerpo</h2>
+    <h2 class="step-head" id="ansiedad-step-2"><span class="step" data-es="Paso dos" data-en="Step two">Paso dos</span><span class="step-title" data-es="Bajar el volumen del cuerpo" data-en="Turn the volume down in your body">Bajar el volumen del cuerpo</span></h2>
 
     <p data-es="Cuando la mente va más rápida que el cuerpo, es difícil razonar. La respiración es la única función automática que puedes tomar y dirigir a voluntad, y por eso sirve como palanca." data-en="When the mind runs faster than the body, reasoning is hard. Breathing is the only automatic function you can take over and direct at will, which is why it works as a lever.">
       Cuando la mente va más rápida que el cuerpo, es difícil razonar. La
@@ -733,13 +742,13 @@
       y sin esperar a sentir nada especial en el primer minuto.
     </p>
 
-    <p>
+    <p data-es="Ayuda también nombrar lo que está pasando en voz alta, aunque estés solo: «estoy teniendo una subida de ansiedad y va a bajar». El lenguaje ordena el desorden de una manera que la mente desbordada no logra por su cuenta." data-en="It also helps to name what is happening out loud, even alone: «I am having a spike of anxiety and it will come down». Language orders the chaos in a way an overwhelmed mind cannot manage on its own.">
       Ayuda también <strong>nombrar lo que está pasando en voz alta</strong>, aunque
       estés solo: «estoy teniendo una subida de ansiedad y va a bajar». El lenguaje
       ordena el desorden de una manera que la mente desbordada no logra por su cuenta.
     </p>
 
-    <h2 data-es="Hacer algo pequeño, no perfecto" data-en="Do something small, not perfect"><h2><span class="step" data-es="Paso tres" data-en="Step three">Paso tres</span>Hacer algo pequeño, no perfecto</h2>
+    <h2 class="step-head" id="ansiedad-step-3"><span class="step" data-es="Paso tres" data-en="Step three">Paso tres</span><span class="step-title" data-es="Hacer algo pequeño, no perfecto" data-en="Do something small, not perfect">Hacer algo pequeño, no perfecto</span></h2>
 
     <p data-es="La ansiedad crece en la evitación. Cada vez que no haces algo por miedo, el cerebro anota que ese algo era peligroso, y la próxima vez la alarma suena más fuerte." data-en="Anxiety grows in avoidance. Every time you don't do something out of fear, the brain notes that it was dangerous, and next time the alarm is louder.">
       La ansiedad crece en la evitación. Cada vez que no haces algo por miedo, el
@@ -759,7 +768,7 @@
       <li data-es="Si evitabas salir, sal un rato corto, cerca, y vuelve." data-en="If you were avoiding going out, go out briefly, close to home, and come back.">Si evitabas salir, sal un rato corto, cerca, y vuelve.</li>
     </ul>
 
-    <p>
+    <p data-es="Lo importante no es que el paso sea grande, sino que lo hagas a pesar de la incomodidad. Cada vez que haces algo difícil con la ansiedad presente, tu cerebro recoge una prueba nueva de que poder con eso era posible." data-en="What matters is not that the step is big, but that you take it despite the discomfort. Every time you do something difficult with anxiety present, your brain collects new evidence that coping with it was possible.">
       Lo importante no es que el paso sea grande, sino que <strong>lo hagas a pesar
       de la incomodidad</strong>. Cada vez que haces algo difícil con la ansiedad
       presente, tu cerebro recoge una prueba nueva de que poder con eso era posible.
@@ -793,7 +802,7 @@
       algo más humilde y, creo, más útil: que deje de decidir por ti.
     </p>
 
-    <p class="note">
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias. Si en algún momento estás en riesgo, acude a los servicios sanitarios de tu país." data-en="This article is for general information and does not replace a professional assessment or emergency care. If you are ever at risk, contact the health services in your country.">
       Este texto tiene carácter divulgativo y no sustituye a una evaluación
       profesional ni a la atención de un servicio de urgencias. Si en algún momento
       estás en riesgo, acude a los servicios sanitarios de tu país.
@@ -804,17 +813,17 @@
       <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
       <p data-es="Si además de la ansiedad te has dado cuenta de que las discusiones en casa se repiten, o te da miedo empezar, quizá te interese alguna de estas lecturas." data-en="If, besides anxiety, you have noticed the same arguments repeating at home, or you are afraid of starting, one of these might interest you.">Si además de la ansiedad te has dado cuenta de que las discusiones en casa se repiten, o te da miedo empezar, quizá te interese alguna de estas lecturas.</p>
       <ul>
-        <li><a href="https://luissandovalpsico.github.io/blog/pareja.html">Por qué repites las mismas discusiones con tu pareja</a></li>
-        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/pareja.html" data-es="Por qué repites las mismas discusiones con tu pareja" data-en="Why you keep having the same arguments with your partner">Por qué repites las mismas discusiones con tu pareja</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html" data-es="Terapia online: qué pasa realmente en la primera sesión" data-en="Online therapy: what really happens in the first session">Terapia online: qué pasa realmente en la primera sesión</a></li>
       </ul>
     </div>
 
     <div class="cta-box">
       <h2 data-es="Si esto te representa, hablemos" data-en="If this resonates, let's talk">Si esto te representa, hablemos</h2>
       <p data-es="Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita." data-en="50-minute sessions, online from any country or in person in Santa Elena, Salinas, Olón and Montañita.">Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita.</p>
-      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
       <p style="margin-top:1rem;font-size:0.85rem;">
-        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
       </p>
     </div>
   </article>
