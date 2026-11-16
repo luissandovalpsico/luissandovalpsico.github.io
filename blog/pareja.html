@@ -611,6 +611,18 @@
     border-radius: var(--radius); text-align: center; }
   .cta-box h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-bottom: 0.8rem; border: 0; padding-top: 0; }
   .cta-box p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.6rem; }
+
+  /* ===== Artículos relacionados ===== */
+  .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .related h2 { font-size: 1rem !important; margin: 0 0 1rem !important; padding: 0 !important;
+    border: 0 !important; font-family: var(--sans); font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent-dark); }
+  .related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+  .related li a { display: block; padding: 1rem 1.2rem; text-decoration: none; background: var(--card);
+    border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--serif);
+    font-size: 1.02rem; line-height: 1.5; color: var(--text);
+    transition: border-color 0.3s ease, color 0.3s ease; }
+  .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
 </style>
 </head>
 <body>
@@ -768,6 +780,16 @@
       profesional ni a la atención de un servicio de urgencias. Si en algún momento
       estás en riesgo, acude a los servicios sanitarios de tu país.
     </p>
+
+
+    <div class="related">
+      <h2>Te puede interesar</h2>
+      <p>Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente.</p>
+      <ul>
+        <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
+      </ul>
+    </div>
 
     <div class="cta-box">
       <h2>Si las conversaciones ya no llegan</h2>
