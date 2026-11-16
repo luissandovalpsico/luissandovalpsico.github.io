@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas) — Luis Sandoval, psicólogo</title>
+<meta name="description" content="Tres pasos concretos para relacionarte con la ansiedad de otra manera, sin recetas milagrosas.">
+<meta name="author" content="Luis Sandoval">
+<link rel="canonical" href="https://luissandovalpsico.github.io/blog/ansiedad.html">
+
+<meta property="og:title" content="Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)">
+<meta property="og:description" content="Tres pasos concretos para relacionarte con la ansiedad de otra manera, sin recetas milagrosas.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luissandovalpsico.github.io/blog/ansiedad.html">
+<meta property="og:site_name" content="Luis Sandoval — Psicología">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================================
+     TOKENS DE DISEÑO
+     ========================================================= */
+  :root {
+    --bg: #F9F8F6;          /* blanco roto cálido */
+    --text: #333333;        /* gris oscuro */
+    --text-soft: #6b6b68;   /* texto secundario */
+    --accent: #8A9A5B;      /* verde salvia */
+    --accent-dark: #6f7d47;
+    --line: #e3e0d9;
+    --card: #fdfdfc;
+    --serif: "Lora", Georgia, serif;
+    --sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1080px;
+    --radius: 4px;
+  }
+
+  /* =========================================================
+     BASE
+     ========================================================= */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* Contenedor común */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Secciones: mucho aire entre bloques */
+  section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+
+  /* Etiqueta pequeña de sección */
+  .eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* Línea fina de acento */
+  .hairline {
+    width: 48px;
+    height: 1px;
+    border: 0;
+    margin: 0 0 2rem;
+    background: var(--accent);
+  }
+
+  /* =========================================================
+     BOTONES
+     ========================================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    min-height: 52px;                 /* zona táctil cómoda */
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(138, 154, 91, 0.22);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+  }
+
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     HEADER / HERO
+     ========================================================= */
+  header.hero {
+    padding: clamp(4.5rem, 11vw, 9rem) 0 clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .hero-inner { max-width: 720px; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    margin-bottom: 1.6rem;
+  }
+
+  .hero .lead {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 300;
+    color: var(--text-soft);
+    max-width: 56ch;
+    margin-bottom: 2.4rem;
+  }
+
+  /* Detalle suave: marca de agua tipográfica opcional a la derecha */
+  .hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  .hero-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+  /* Punto verde de acento */
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  /* =========================================================
+     CÓMO FUNCIONA
+     ========================================================= */
+  .steps {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  }
+
+  .step { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+
+  .step .num {
+    display: block;
+    margin-bottom: 0.9rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .step h3 { font-size: 1.25rem; margin-bottom: 0.7rem; }
+
+  .step p { font-size: 0.95rem; font-weight: 300; color: var(--text-soft); }
+
+  /* =========================================================
+     ESPECIALIDADES
+     ========================================================= */
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card {
+    padding: 2rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+  .card p { font-size: 0.94rem; font-weight: 300; color: var(--text-soft); }
+
+  .card .tag {
+    display: block;
+    margin-top: 1.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     SOBRE MÍ
+     ========================================================= */
+  .about {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .about { grid-template-columns: 320px 1fr; gap: 4rem; }
+  }
+
+  /* Marco de la foto: si no hay imagen, muestra un bloque sobrio */
+  .photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #f1efe9 0%, #e7e4dc 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Texto de relleno cuando aún no hay foto */
+  .photo .placeholder {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a9a69d;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .about h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.3rem; }
+
+  .about p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.1rem; }
+
+  .about .signature {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text);
+    margin-top: 1.6rem;
+  }
+
+  /* =========================================================
+     TESTIMONIOS
+     ========================================================= */
+  .quotes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 860px) {
+    .quotes { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1.75rem;
+    border-left: 2px solid var(--accent);
+    background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  blockquote p {
+    font-family: var(--serif);
+    font-size: 1.03rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  blockquote footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     TARIFAS Y MODALIDAD
+     ========================================================= */
+  .fees {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  @media (min-width: 780px) {
+    .fees { grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+  }
+
+  .fees-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 780px) {
+    .fees-price { border-bottom: 0; border-right: 1px solid var(--line); padding: 0 2rem 0 0; }
+  }
+
+  .fees-amount {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--accent-dark);
+    line-height: 1;
+  }
+
+  .fees-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .fees-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+
+  .fees-list li { display: grid; gap: 0.15rem; }
+
+  .fees-list strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .fees-list span {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  .fees-note {
+    margin-top: 1.4rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     FAQ (acordeón con <details>, sin JS necesario)
+     ========================================================= */
+  .faq { max-width: 780px; }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.35rem 0;
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.25s ease;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary:hover { color: var(--accent-dark); }
+
+  /* Signo + / − dibujado en CSS */
+  .faq summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+  }
+
+  .faq details[open] summary::after { transform: rotate(-135deg); }
+
+  .faq .answer {
+    padding: 0 2rem 1.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     CIERRE / CTA FINAL
+     ========================================================= */
+  .closing {
+    text-align: center;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
+    background: #f3f1ec;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .closing h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    margin-bottom: 1rem;
+  }
+
+  .closing p {
+    color: var(--text-soft);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer.site {
+    padding: 3rem 0 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  footer.site .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer.site a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Enlaces a proyectos hermanos: discretos, separados del bloque legal */
+  footer.site .siblings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer.site .siblings span { color: #a9a69d; }
+
+  footer.site a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
+
+  footer.site .legal { font-size: 0.75rem; color: #93908a; }
+
+  /* =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     ========================================================= */
+  .wa {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(60, 70, 35, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .wa:hover { background: var(--accent-dark); transform: scale(1.06); }
+
+  .wa svg { width: 27px; height: 27px; fill: #fff; }
+
+  /* Etiqueta accesible solo para lectores de pantalla */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     APARICIÓN SUAVE AL HACER SCROLL (mejora progresiva)
+     ========================================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+
+  /* ===== Artículo de blog ===== */
+  .article-head { padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.2rem, 3vw, 2rem); }
+  .article-head h1 { font-size: clamp(1.85rem, 4.2vw, 2.9rem); max-width: 24ch; margin-bottom: 1.3rem; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); }
+  .article-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .prose { max-width: 68ch; padding-bottom: clamp(2rem, 5vw, 3rem); }
+  .prose p { font-size: 1.04rem; font-weight: 300; line-height: 1.85; color: #43413e; margin-bottom: 1.4rem; }
+  .prose h2 { font-size: clamp(1.28rem, 2.5vw, 1.55rem); margin: 2.8rem 0 1rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line); }
+  .prose h2 .step { display: block; margin-bottom: 0.45rem; font-family: var(--sans); font-size: 0.68rem;
+    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-dark); }
+  .prose ul { margin: 0 0 1.4rem; padding-left: 1.2rem; }
+  .prose li { font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: #43413e; margin-bottom: 0.55rem; }
+  .prose strong { font-weight: 600; color: var(--text); }
+  .prose blockquote { margin: 1.8rem 0; background: #f3f1ec; }
+  .note { margin: 2.4rem 0 0; padding: 1.3rem 1.5rem; border: 1px solid var(--line);
+    border-radius: var(--radius); font-size: 0.86rem; font-weight: 300; line-height: 1.7;
+    color: var(--text-soft); background: var(--card); }
+  .backlink { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1.6rem 0 0;
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-soft); text-decoration: none; transition: color 0.3s ease; }
+  .backlink:hover { color: var(--accent-dark); }
+  .cta-box { margin-top: 3rem; padding: clamp(1.8rem, 4vw, 2.6rem); background: #f3f1ec;
+    border-radius: var(--radius); text-align: center; }
+  .cta-box h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-bottom: 0.8rem; border: 0; padding-top: 0; }
+  .cta-box p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.6rem; }
+</style>
+</head>
+<body>
+
+  <header class="article-head">
+    <div class="wrap">
+      <a class="backlink" href="https://luissandovalpsico.github.io/">← Volver al inicio</a>
+      <span class="eyebrow" style="margin-top:2rem;">Ansiedad</span>
+      <h1>Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</h1>
+      <div class="article-meta">
+        <span><i class="dot"></i> Lectura de 6 minutos</span>
+        <span>Por Luis Sandoval, psicólogo</span>
+      </div>
+      <hr class="hairline" style="margin-top:2rem;">
+    </div>
+  </header>
+
+  <article class="wrap prose">
+
+    <p>
+      Si has llegado hasta aquí buscando el truco que apaga la ansiedad de una vez
+      y para siempre, te voy a decepcionar en el primer párrafo: no existe. Y el
+      hecho de que nadie te lo haya dicho con claridad probablemente forme parte
+      de por qué sigues buscándolo.
+    </p>
+
+    <p>
+      La ansiedad no es un error de fábrica ni una debilidad de carácter. Es tu
+      sistema de alarma funcionando. El problema aparece cuando esa alarma suena
+      con demasiada frecuencia, con demasiada intensidad, o cuando ya no hay nada
+      que justifique que suene. Lo que sí puedes hacer es aprender a relacionarte
+      con ella de otra manera.
+    </p>
+
+    <p>
+      Estos tres pasos no son un método cerrado ni una receta que funcione igual
+      para todo el mundo. Son tres movimientos que, en consulta, suelen ayudar a
+      recuperar algo de margen.
+    </p>
+
+    <h2><span class="step">Paso uno</span>Entender qué te está diciendo</h2>
+
+    <p>
+      La ansiedad casi siempre avisa de algo. A veces acierta: hay una amenaza
+      real, una decisión difícil, una conversación pendiente. Otras veces se
+      equivoca de diana: te avisa de un peligro que ocurrió hace años y que sigue
+      doliendo.
+    </p>
+
+    <p>
+      El primer paso no es quitarla, es <strong>escucharla con algo de distancia</strong>.
+      Cuando notes que sube, prueba a hacerte tres preguntas sencillas:
+    </p>
+
+    <ul>
+      <li>¿Qué es lo que esta preocupación cree que va a pasar?</li>
+      <li>¿Cuánto de eso es un hecho y cuánto es una interpretación?</li>
+      <li>¿Qué estoy evitando justo ahora que esto aparece?</li>
+    </ul>
+
+    <p>
+      No hace falta responder bien. El simple gesto de pasar de «estoy ansioso» a
+      «me estoy diciendo que va a pasar algo malo» cambia el lugar desde donde te
+      miras, y eso ya reduce un poco la intensidad.
+    </p>
+
+    <blockquote>
+      <p>«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»</p>
+    </blockquote>
+
+    <h2><span class="step">Paso dos</span>Bajar el volumen del cuerpo</h2>
+
+    <p>
+      Cuando la mente va más rápida que el cuerpo, es difícil razonar. La
+      respiración es la única función automática que puedes tomar y dirigir a
+      voluntad, y por eso sirve como palanca.
+    </p>
+
+    <p>
+      No necesitas ejercicios complicados. Una respiración con la exhalación más
+      larga que la inhalación —por ejemplo, inhalar contando cuatro y exhalar
+      contando seis— durante dos o tres minutos suele bastar para que el sistema
+      nervioso entienda que no hay una amenaza inmediata. Hazlo lento, sin forzar,
+      y sin esperar a sentir nada especial en el primer minuto.
+    </p>
+
+    <p>
+      Ayuda también <strong>nombrar lo que está pasando en voz alta</strong>, aunque
+      estés solo: «estoy teniendo una subida de ansiedad y va a bajar». El lenguaje
+      ordena el desorden de una manera que la mente desbordada no logra por su cuenta.
+    </p>
+
+    <h2><span class="step">Paso tres</span>Hacer algo pequeño, no perfecto</h2>
+
+    <p>
+      La ansiedad crece en la evitación. Cada vez que no haces algo por miedo, el
+      cerebro anota que ese algo era peligroso, y la próxima vez la alarma suena
+      más fuerte.
+    </p>
+
+    <p>
+      El tercer paso es recuperar el movimiento, pero en dosis mínimas. No se trata
+      de enfrentarte hoy al escenario que te da pánico, sino de dar un paso de un
+      tamaño que puedas sostener sin colapsar.
+    </p>
+
+    <ul>
+      <li>Si te da miedo el teléfono, escribe el mensaje y no lo envíes todavía.</li>
+      <li>Si te paraliza una tarea grande, haz los primeros cinco minutos.</li>
+      <li>Si evitabas salir, sal un rato corto, cerca, y vuelve.</li>
+    </ul>
+
+    <p>
+      Lo importante no es que el paso sea grande, sino que <strong>lo hagas a pesar
+      de la incomodidad</strong>. Cada vez que haces algo difícil con la ansiedad
+      presente, tu cerebro recoge una prueba nueva de que poder con eso era posible.
+    </p>
+
+    <h2>Lo que no funciona (o no del todo)</h2>
+
+    <p>
+      Merece la pena decirlo porque abunda por ahí: forzarte a «pensar en positivo»
+      no suele servir cuando la alarma está activa; lo que consigue a menudo es
+      que te sientas peor por no poder pensar bonito. Y distraerte permanentemente
+      calma un rato, pero no cambia la relación con lo que estás sintiendo.
+    </p>
+
+    <p>
+      Tampoco es cierto que hablar de la ansiedad la empeore. Contar lo que te pasa,
+      en un entorno seguro, es una de las formas más eficaces de bajarle el peso.
+    </p>
+
+    <h2>Cuándo conviene pedir ayuda</h2>
+
+    <p>
+      Estos tres pasos son un buen punto de partida, pero no son terapia. Si la
+      ansiedad te está quitando horas de sueño, te impide hacer cosas que antes
+      hacías, ocupa buena parte de tu día o empieza a acompañarse de síntomas
+      físicos sin causa médica clara, merece la pena hablarlo con un profesional.
+    </p>
+
+    <p>
+      En terapia no voy a prometerte que la ansiedad desaparezca. Te voy a prometer
+      algo más humilde y, creo, más útil: que deje de decidir por ti.
+    </p>
+
+    <p class="note">
+      Este texto tiene carácter divulgativo y no sustituye a una evaluación
+      profesional ni a la atención de un servicio de urgencias. Si en algún momento
+      estás en riesgo, acude a los servicios sanitarios de tu país.
+    </p>
+
+    <div class="cta-box">
+      <h2>Si esto te representa, hablemos</h2>
+      <p>Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita.</p>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
+      <p style="margin-top:1rem;font-size:0.85rem;">
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
+      </p>
+    </div>
+  </article>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site">
+    <div class="wrap inner">
+      <span>© 2026 Luis Sandoval · Psicología</span>
+      <span><a href="mailto:luissandovalpsico2.0@gmail.com">luissandovalpsico2.0@gmail.com</a></span>
+      <span class="legal">Aviso legal · Privacidad</span>
+    </div>
+    <div class="wrap siblings">
+      <span>Proyecto hermano:</span>
+      <a href="https://luissandovalpsico.github.io/gourmet-restaurant/" target="_blank" rel="noopener">Gourmet Restaurant</a>
+      <a href="https://luissandovalpsico.github.io/documental/" target="_blank" rel="noopener">The Heart of the Beast</a>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/573135578578" aria-label="Escribir por WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"/></svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+</body>
+</html>
