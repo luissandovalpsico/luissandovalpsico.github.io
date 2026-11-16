@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terapia online — Un espacio para detenerte, comprenderte y avanzar</title>
-<meta name="description" content="Terapia psicológica online por videoconferencia. Un espacio tranquilo para comprenderte y avanzar a tu ritmo.">
+<meta name="description" content="Psicólogo en Santa Elena, Salinas, Olón y Montañita. Terapia online por videoconferencia para cualquier país. Sesiones de 50 minutos, 25 USD.">
 <meta name="google-site-verification" content="OpChD9Bk8vteJ-dsMrbbEUW68h4Vxi_IGOWU1Q2SGnQ" />
 
 <!-- Tipografía: Lora (títulos) + Nunito Sans (textos) -->
@@ -343,6 +343,78 @@
   }
 
   /* =========================================================
+     TARIFAS Y MODALIDAD
+     ========================================================= */
+  .fees {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  @media (min-width: 780px) {
+    .fees { grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+  }
+
+  .fees-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 780px) {
+    .fees-price { border-bottom: 0; border-right: 1px solid var(--line); padding: 0 2rem 0 0; }
+  }
+
+  .fees-amount {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--accent-dark);
+    line-height: 1;
+  }
+
+  .fees-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .fees-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+
+  .fees-list li { display: grid; gap: 0.15rem; }
+
+  .fees-list strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .fees-list span {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  .fees-note {
+    margin-top: 1.4rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
      FAQ (acordeón con <details>, sin JS necesario)
      ========================================================= */
   .faq { max-width: 780px; }
@@ -434,6 +506,22 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease, color 0.3s ease;
   }
+
+  /* Enlaces a proyectos hermanos: discretos, separados del bloque legal */
+  footer.site .siblings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer.site .siblings span { color: #a9a69d; }
 
   footer.site a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
 
@@ -556,16 +644,33 @@
         <span class="eyebrow">Terapia psicológica online</span>
         <h1>Un espacio para detenerte, comprenderte y avanzar</h1>
         <p class="lead">
-          Sesiones por videoconferencia, desde donde estés. Un lugar tranquilo
-          para hablar sin prisa, entender lo que te pasa y encontrar tu propio
-          ritmo para avanzar.
+          Mi trabajo consiste en acompañar procesos. No en dar soluciones rápidas
+          ni en aplicar un método idéntico a todas las personas: cada proceso tiene
+          su ritmo, y respetarlo es parte del tratamiento.
         </p>
-        <a class="btn btn-primary" href="#contacto">Solicitar primera consulta</a>
+        <p class="lead">
+          Atiendo a personas adultas que atraviesan dificultades relacionadas con
+          ansiedad, relaciones y autoconocimiento. Las sesiones se desarrollan en un
+          espacio seguro y confidencial, con un encuadre claro desde la primera
+          entrevista: qué trabajamos, con qué frecuencia y hacia dónde vamos.
+        </p>
+        <p class="lead">
+          Licenciado en Psicología, con postgrado en Psicoterapia. Ejercicio desde
+          la costa de Ecuador: de forma online para cualquier país, o de forma
+          presencial en Santa Elena y Salinas, y en Olón y Montañita, siempre
+          con cita previa.
+        </p>
+        <p class="lead" style="color: var(--text);">
+          No voy a prometerte que desaparezca lo que sientes. Te prometo algo más
+          honesto: escucharte sin prisa y acompañarte mientras encuentras tu propia
+          manera de estar mejor.
+        </p>
+        <a class="btn btn-primary" href="#contacto" style="margin-top:0.6rem;">Solicitar primera consulta</a>
 
         <div class="hero-meta">
-          <span><i class="dot"></i> Videoconferencia</span>
-          <span><i class="dot"></i> Adultos</span>
-          <span><i class="dot"></i> Primera consulta sin compromiso</span>
+          <span><i class="dot"></i> Online · cualquier país</span>
+          <span><i class="dot"></i> Presencial · Santa Elena y Salinas</span>
+          <span><i class="dot"></i> Presencial · Olón y Montañita</span>
         </div>
       </div>
     </div>
@@ -688,6 +793,57 @@
     </div>
   </section>
 
+  <!-- ===================== TARIFAS Y MODALIDAD ===================== -->
+  <section id="tarifas">
+    <div class="wrap">
+      <span class="eyebrow">Tarifas y modalidad</span>
+      <hr class="hairline">
+      <h2 class="reveal" style="margin-bottom:2rem;">Claro desde el principio</h2>
+
+      <div class="fees">
+        <div class="fees-price">
+          <span class="fees-amount">25 USD</span>
+          <span class="fees-sub">Sesión de 50 minutos</span>
+        </div>
+
+        <ul class="fees-list">
+          <li>
+            <strong>Online</strong>
+            <span>Por videoconferencia, desde cualquier país.</span>
+          </li>
+          <li>
+            <strong>Presencial en Santa Elena y Salinas</strong>
+            <span>Con cita previa.</span>
+          </li>
+          <li>
+            <strong>Presencial en Olón y Montañita</strong>
+            <span>Si estás cerca de la costa, con cita previa.</span>
+          </li>
+          <li>
+            <strong>Pago</strong>
+            <span>Transferencia bancaria o PayPal.</span>
+          </li>
+          <li>
+            <strong>Cancelación</strong>
+            <span>Con 24 horas de antelación. Las cancelaciones con menos de 24 horas se abonan íntegras.</span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="fees-note">
+        Si tras la primera sesión sientes que no soy la persona adecuada, dímelo
+        con confianza. Te ayudo a orientar la búsqueda hacia otro profesional.
+      </p>
+
+      <p class="fees-note" style="border:0;padding-top:0;">
+        <strong>English —</strong> 50-minute session: 25 USD. Online (any country) ·
+        In person in Santa Elena / Salinas (by appointment) ·
+        In person in Olón / Montañita (by appointment). Payment by bank transfer or PayPal.
+        Cancellation with 24 hours' notice; cancellations under 24 hours are charged in full.
+      </p>
+    </div>
+  </section>
+
   <!-- ===================== FAQ ===================== -->
   <section id="faq">
     <div class="wrap">
@@ -767,6 +923,11 @@
       <span class="legal">
         Aviso legal · Privacidad
       </span>
+    </div>
+    <div class="wrap siblings">
+      <span>Proyecto hermano:</span>
+      <a href="https://luissandovalpsico.github.io/gourmet-restaurant/" target="_blank" rel="noopener">Gourmet Restaurant</a>
+      <a href="https://luissandovalpsico.github.io/documental/" target="_blank" rel="noopener">The Heart of the Beast</a>
     </div>
   </footer>
 
