@@ -623,9 +623,33 @@
     font-size: 1.02rem; line-height: 1.5; color: var(--text);
     transition: border-color 0.3s ease, color 0.3s ease; }
   .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+  /* ===== Conmutador de idioma ===== */
+  .lang-switch {
+    position: fixed; top: 0.85rem; right: 0.85rem; z-index: 60;
+    display: flex; border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; padding: 0.5rem 0.8rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--text-soft); cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
 </style>
 </head>
 <body>
+
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
 
   <header class="article-head">
     <div class="wrap">
@@ -642,62 +666,62 @@
 
   <article class="wrap prose">
 
-    <p>
+    <p data-es="La primera sesión da más miedo del que se reconoce en voz alta. La mayoría de las personas que llegan a terapia no temen hablar de lo que les pasa: temen no saber qué decir, sentirse ridículos, llorar sin poder parar o salir de allí sin haber resuelto nada." data-en="The first session is scarier than anyone admits out loud. Most people who come to therapy are not afraid of talking about what is happening: they fear not knowing what to say, feeling ridiculous, crying without being able to stop, or leaving without having solved anything.">
       La primera sesión da más miedo del que se reconoce en voz alta. La mayoría
       de las personas que llegan a terapia no temen hablar de lo que les pasa:
       temen no saber qué decir, sentirse ridículos, llorar sin poder parar o
       salir de allí sin haber resuelto nada.
     </p>
 
-    <p>
+    <p data-es="Así que voy a contarte exactamente qué pasa, sin dramatismo y sin promesas." data-en="So let me tell you exactly what happens, without drama and without promises.">
       Así que voy a contarte exactamente qué pasa, sin dramatismo y sin promesas.
     </p>
 
-    <h2>Antes de empezar</h2>
+    <h2 data-es="Antes de empezar" data-en="Before you start">Antes de empezar</h2>
 
-    <p>
+    <p data-es="Reservas una hora y te llega un enlace (o una dirección, si es presencial). No hay formularios largos ni tests previos que tengas que rellenar. Si te apetece preparar algo, basta con pensar dos o tres cosas: qué te ha traído aquí, desde cuándo y qué te gustaría que fuese distinto." data-en="You book an hour and receive a link (or an address, if it is in person). No long forms or previous tests to fill in. If you feel like preparing something, just think about two or three things: what brought you here, since when, and what you would like to be different.">
       Reservas una hora y te llega un enlace (o una dirección, si es presencial).
       No hay formularios largos ni tests previos que tengas que rellenar. Si te
       apetece preparar algo, basta con pensar dos o tres cosas: qué te ha traído
       aquí, desde cuándo y qué te gustaría que fuese distinto.
     </p>
 
-    <p>
+    <p data-es="Y si no se te ocurre nada, también está bien. Llegar sin tenerlo ordenado es parte del material con el que trabajamos." data-en="And if nothing comes to mind, that's fine too. Arriving without having it sorted out is part of the material we work with.">
       Y si no se te ocurre nada, también está bien. Llegar sin tenerlo ordenado es
       parte del material con el que trabajamos.
     </p>
 
-    <h2>Los primeros diez minutos</h2>
+    <h2 data-es="Los primeros diez minutos" data-en="The first ten minutes">Los primeros diez minutos</h2>
 
-    <p>
+    <p data-es="Empiezo yo. Te explico cómo trabajo, cuánto dura la sesión, qué pasa con lo que me cuentes y cuál es el límite de la confidencialidad. Te lo cuento antes de que tú hables porque es tu derecho saberlo —y porque no es justo pedirte que te abras sin que sepas qué va a pasar con eso." data-en="I start. I explain how I work, how long the session lasts, what happens with what you tell me, and where the limits of confidentiality are. I tell you this before you speak because it is your right to know —and because it isn't fair to ask you to open up without knowing what will happen with it.">
       Empiezo yo. Te explico cómo trabajo, cuánto dura la sesión, qué pasa con lo
       que me cuentes y cuál es el límite de la confidencialidad. Te lo cuento antes
       de que tú hables porque es tu derecho saberlo —y porque no es justo pedirte
       que te abras sin que sepas qué va a pasar con eso.
     </p>
 
-    <p>
+    <p data-es="Después te pregunto qué te trae. No hay una forma correcta de responder." data-en="Then I ask what brings you here. There is no correct way to answer.">
       Después te pregunto qué te trae. No hay una forma correcta de responder.
     </p>
 
-    <h2>La parte central: escuchar y preguntar</h2>
+    <h2 data-es="La parte central: escuchar y preguntar" data-en="The middle part: listening and asking">La parte central: escuchar y preguntar</h2>
 
-    <p>
+    <p data-es="La primera sesión no es un interrogatorio. Es una conversación con dirección. Voy a escuchar mucho y preguntar lo justo para entender: desde cuándo pasa, cómo afecta a tu día, qué has intentado hasta ahora, qué recursos tienes alrededor." data-en="The first session is not an interrogation. It is a conversation with direction. I will listen a lot and ask just enough to understand: since when, how it affects your day, what you have tried so far, what resources you have around you.">
       La primera sesión no es un interrogatorio. Es una conversación con dirección.
       Voy a escuchar mucho y preguntar lo justo para entender: desde cuándo pasa,
       cómo afecta a tu día, qué has intentado hasta ahora, qué recursos tienes
       alrededor.
     </p>
 
-    <p>
+    <p data-es="Habrá momentos de silencio. No son incomodidad: son espacio. Si en algún punto no quieres hablar de algo, lo dices y seguimos por otro lado. Nadie te va a forzar." data-en="There will be moments of silence. They are not discomfort: they are space. If at any point you don't want to talk about something, you say so and we move on. Nobody will force you.">
       Habrá momentos de silencio. No son incomodidad: son espacio. Si en algún
       punto no quieres hablar de algo, lo dices y seguimos por otro lado. Nadie te
       va a forzar.
     </p>
 
-    <h2>Los últimos diez minutos: el encuadre</h2>
+    <h2 data-es="Los últimos diez minutos: el encuadre" data-en="The last ten minutes: the framework">Los últimos diez minutos: el encuadre</h2>
 
-    <p>
+    <p data-es="Hacia el final aterrizamos. Te digo qué me parece que puede estar pasando —sin diagnóstico apresurado, porque para eso hace falta más tiempo— y qué forma podría tener el trabajo: cada cuánto vernos, qué objetivos razonables tiene sentido plantear y qué no." data-en="Towards the end we land. I tell you what I think may be happening —without a rushed diagnosis, because that needs more time— and what the work could look like: how often to meet, which reasonable goals make sense and which don't.">
       Hacia el final aterrizamos. Te digo qué me parece que puede estar pasando
       —sin diagnóstico apresurado, porque para eso hace falta más tiempo— y qué
       forma podría tener el trabajo: cada cuánto vernos, qué objetivos razonables
@@ -712,68 +736,68 @@
       profesional, sin ningún problema.
     </p>
 
-    <h2>Lo que probablemente sientas después</h2>
+    <h2 data-es="Lo que probablemente sientas después" data-en="What you will probably feel afterwards">Lo que probablemente sientas después</h2>
 
-    <p>
+    <p data-es="Cansancio. A veces alivio. A veces una ligera sensación de descolocación, porque has dicho en voz alta cosas que llevabas tiempo pensando solo. Todo eso es normal. No hace falta sacar conclusiones esa misma tarde." data-en="Tiredness. Sometimes relief. Sometimes a slight sense of being dislodged, because you have said out loud things you had been thinking alone for a long time. All of that is normal. There is no need to draw conclusions that same afternoon.">
       Cansancio. A veces alivio. A veces una ligera sensación de descolocación,
       porque has dicho en voz alta cosas que llevabas tiempo pensando solo.
       Todo eso es normal. No hace falta sacar conclusiones esa misma tarde.
     </p>
 
     <blockquote>
-      <p>«No vienes a demostrar nada ni a quedar bien. Vienes a que te escuchen.»</p>
+      <p data-es="«No vienes a demostrar nada ni a quedar bien. Vienes a que te escuchen.»" data-en="«You are not here to prove anything or to look good. You are here to be listened to.»">«No vienes a demostrar nada ni a quedar bien. Vienes a que te escuchen.»</p>
     </blockquote>
 
-    <h2>Sobre la terapia online</h2>
+    <h2 data-es="Sobre la terapia online" data-en="About online therapy">Sobre la terapia online</h2>
 
-    <p>
+    <p data-es="Funciona igual que la presencial para la mayoría de las personas, y tiene ventajas claras: no hay desplazamientos, puedes estar en tu propio espacio y resulta más fácil mantener la continuidad cuando viajas. Lo único que necesitas es un sitio tranquilo, auriculares y conexión decente." data-en="It works the same as in-person therapy for most people, and has clear advantages: no travel, you can be in your own space, and it is easier to keep continuity when you travel. All you need is a quiet place, headphones and a decent connection.">
       Funciona igual que la presencial para la mayoría de las personas, y tiene
       ventajas claras: no hay desplazamientos, puedes estar en tu propio espacio y
       resulta más fácil mantener la continuidad cuando viajas. Lo único que
       necesitas es un sitio tranquilo, auriculares y conexión decente.
     </p>
 
-    <p>
+    <p data-es="Si tienes dudas sobre si la videollamada te va a permitir abrirte, esa duda también la hablamos —en la primera sesión o antes de reservarla." data-en="If you have doubts about whether a video call will let you open up, we talk about that too —in the first session or before booking it.">
       Si tienes dudas sobre si la videollamada te va a permitir abrirte, esa duda
       también la hablamos —en la primera sesión o antes de reservarla.
     </p>
 
-    <h2>Preguntas que la gente hace antes de reservar</h2>
+    <h2 data-es="Preguntas que la gente hace antes de reservar" data-en="Questions people ask before booking">Preguntas que la gente hace antes de reservar</h2>
 
     <p>
-      <strong>¿Tengo que contar todo en la primera sesión?</strong> No. No hay
+      <strong data-es="¿Tengo que contar todo en la primera sesión?" data-en="Do I have to tell everything in the first session?">¿Tengo que contar todo en la primera sesión?</strong> No. No hay
       prisa y no hay examen. Se cuenta lo que se puede contar el primer día. Lo
       demás aparece cuando hay confianza, y la confianza tarda.
     </p>
 
     <p>
-      <strong>¿Y si lloro?</strong> Entonces lloras. Es una de las cosas más
+      <strong data-es="¿Y si lloro?" data-en="What if I cry?">¿Y si lloro?</strong> Entonces lloras. Es una de las cosas más
       normales que pasan en una consulta y no incomoda a nadie más que a ti.
     </p>
 
     <p>
-      <strong>¿Y si no sé si necesito terapia?</strong> También es una buena razón
+      <strong data-es="¿Y si no sé si necesito terapia?" data-en="What if I don't know whether I need therapy?">¿Y si no sé si necesito terapia?</strong> También es una buena razón
       para una primera sesión: sirve para aclarar qué te pasa y valorar, con
       criterio, si conviene trabajar en ello o no.
     </p>
 
     <p>
-      <strong>¿Cuánto tiempo tendré que venir?</strong> No se puede responder de
+      <strong data-es="¿Cuánto tiempo tendré que venir?" data-en="How long will I have to come?">¿Cuánto tiempo tendré que venir?</strong> No se puede responder de
       antemano sin convertir la respuesta en una promesa vacía. Lo que sí puedo
       decirte es que el encuadre se revisa: si un proceso se alarga sin dirección,
       lo hablamos antes de que se convierta en costumbre.
     </p>
 
-    <h2>Qué necesitas preparar para la videollamada</h2>
+    <h2 data-es="Qué necesitas preparar para la videollamada" data-en="What you need to prepare for the video call">Qué necesitas preparar para la videollamada</h2>
 
-    <p>
+    <p data-es="Un sitio donde no te interrumpan, auriculares si es posible, y la cámara encendida si te sientes cómodo con ello —aunque apagarla no rompe la sesión, habla mejor si puedes verse—. El móvil sirve perfectamente: no hace falta instalar nada ni crear ninguna cuenta." data-en="A place where you won't be interrupted, headphones if possible, and the camera on if you are comfortable with it —though turning it off doesn't break the session, it goes better if you can be seen—. A phone works perfectly: nothing to install, no account to create.">
       Un sitio donde no te interrumpan, auriculares si es posible, y la cámara
       encendida si te sientes cómodo con ello —aunque apagarla no rompe la sesión,
       habla mejor si puedes verse—. El móvil sirve perfectamente: no hace falta
       instalar nada ni crear ninguna cuenta.
     </p>
 
-    <p>
+    <p data-es="Si vives con otras personas y te preocupa que te oigan, dilo al reservar. Se puede ajustar el horario o trabajar con auriculares y respuestas cortas. No es un detalle menor: hay quien no empieza terapia por esto." data-en="If you live with other people and worry about being overheard, say so when booking. We can adjust the schedule or work with headphones and short answers. It is not a small detail: some people never start therapy because of this.">
       Si vives con otras personas y te preocupa que te oigan, dilo al reservar.
       Se puede ajustar el horario o trabajar con auriculares y respuestas cortas.
       No es un detalle menor: hay quien no empieza terapia por esto.
@@ -787,8 +811,8 @@
 
 
     <div class="related">
-      <h2>Te puede interesar</h2>
-      <p>Si ya estás pensando en el primer paso, estos dos artículos te ayudarán a saber de qué hablar y qué esperar.</p>
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <p data-es="Si ya estás pensando en el primer paso, estos dos artículos te ayudarán a saber de qué hablar y qué esperar." data-en="If you are already thinking about the first step, these two articles will help you know what to talk about and what to expect.">Si ya estás pensando en el primer paso, estos dos artículos te ayudarán a saber de qué hablar y qué esperar.</p>
       <ul>
         <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</a></li>
         <li><a href="https://luissandovalpsico.github.io/blog/pareja.html">Por qué repites las mismas discusiones con tu pareja</a></li>
@@ -796,8 +820,8 @@
     </div>
 
     <div class="cta-box">
-      <h2>Dar el primer paso es la parte difícil</h2>
-      <p>Sesión de 50 minutos. Online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita. 25 USD.</p>
+      <h2 data-es="Dar el primer paso es la parte difícil" data-en="Taking the first step is the hard part">Dar el primer paso es la parte difícil</h2>
+      <p data-es="Sesión de 50 minutos. Online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita. 25 USD." data-en="50-minute session. Online from any country or in person in Santa Elena, Salinas, Olón and Montañita. 25 USD.">Sesión de 50 minutos. Online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita. 25 USD.</p>
       <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
       <p style="margin-top:1rem;font-size:0.85rem;">
         <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
@@ -824,5 +848,27 @@
     <span class="sr-only">WhatsApp</span>
   </a>
 
+
+  <script>
+  /* Conmutador ES / EN por atributos data-es / data-en */
+  (function () {
+    const bEs = document.getElementById('btn-es'), bEn = document.getElementById('btn-en');
+    function aplicar(lang) {
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      document.documentElement.lang = lang;
+      bEs.setAttribute('aria-pressed', lang === 'es');
+      bEn.setAttribute('aria-pressed', lang === 'en');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    bEs.addEventListener('click', () => aplicar('es'));
+    bEn.addEventListener('click', () => aplicar('en'));
+    let g = 'es';
+    try { g = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (g === 'en') aplicar('en');
+  })();
+  </script>
 </body>
 </html>
