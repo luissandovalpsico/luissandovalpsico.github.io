@@ -684,6 +684,49 @@
   }
 
   .lang-badge svg { width: 14px; height: 14px; fill: currentColor; flex: 0 0 auto; }
+
+  /* =========================================================
+     CITA SOBRE EL PROCESO (sustituye a los testimonios)
+     ========================================================= */
+  .process-quote {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-text {
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text);
+    margin: 0 0 1.8rem;
+    text-wrap: balance;
+  }
+
+  .process-rule {
+    display: block;
+    width: 42px;
+    height: 1px;
+    margin: 0 auto 1.2rem;
+    background: var(--accent);
+  }
+
+  .process-sig {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 600px) {
+    /* En móvil la cita se integra con el resto sin romper el ritmo vertical */
+    .process-quote { border-left: 0; border-right: 0; }
+  }
 </style>
 
 <!-- ===================== REDES SOCIALES ===================== -->
@@ -898,26 +941,19 @@
     </div>
   </section>
 
-  <!-- ===================== TESTIMONIOS ===================== -->
-  <section id="testimonios">
+  <!-- ===================== CITA SOBRE EL PROCESO ===================== -->
+  <section id="proceso">
     <div class="wrap">
-      <span class="eyebrow" data-es="Testimonios" data-en="Testimonials">Testimonios</span>
-      <hr class="hairline">
-      <h2 class="reveal" data-es="Lo que dicen algunas personas" data-en="What some people say">Lo que dicen algunas personas</h2>
-
-      <div class="quotes">
-        <blockquote class="reveal">
-          <p data-es="«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»" data-en="«I arrived with the feeling of being on pause, not really knowing where to go next. What helped most was not feeling judged. Finding that space of calm once a week changed the way I look at my days.»">«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»</p>
-          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
-        </blockquote>
-        <blockquote class="reveal">
-          <p data-es="«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»" data-en="«I was afraid of video calls; I thought it wouldn't be the same as being face to face. But the connection was very easy. After a few sessions it already felt like my moment of the week, for me.»">«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»</p>
-          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
-        </blockquote>
-        <blockquote class="reveal">
-          <p data-es="«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»" data-en="«I didn't come with a specific problem, just the feeling that something didn't fit. Talking without hurry, with someone who doesn't hand you magic recipes, helped me understand myself better and make decisions I had been postponing for a long time.»">«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»</p>
-          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
-        </blockquote>
+      <div class="process-quote">
+        <p class="process-text reveal"
+           data-es="La terapia no consiste en tener todas las respuestas. Consiste en encontrar un lugar donde las preguntas se puedan hacer sin prisa, sin juicio y sin tener que fingir que todo está bien."
+           data-en="Therapy is not about having all the answers. It is about finding a place where the questions can be asked without hurry, without judgement, and without having to pretend everything is fine.">
+          La terapia no consiste en tener todas las respuestas. Consiste en encontrar
+          un lugar donde las preguntas se puedan hacer sin prisa, sin juicio y sin
+          tener que fingir que todo está bien.
+        </p>
+        <span class="process-rule" aria-hidden="true"></span>
+        <span class="process-sig" data-es="Luis Sandoval · Psicólogo" data-en="Luis Sandoval · Psychologist">Luis Sandoval · Psicólogo</span>
       </div>
     </div>
   </section>
@@ -1065,6 +1101,11 @@
         <a class="article-row" href="https://luissandovalpsico.github.io/blog/duelo-distancia.html">
           <span class="date" data-es="Duelo" data-en="Grief">Duelo</span>
           <h3 data-es="El duelo en la distancia: cómo afrontar la pérdida cuando estás lejos de casa" data-en="Grief from a distance: facing loss when you are far from home">El duelo en la distancia: cómo afrontar la pérdida cuando estás lejos de casa</h3>
+          <span class="more" data-es="Leer" data-en="Read">Leer</span>
+        </a>
+              <a class="article-row" href="https://luissandovalpsico.github.io/blog/elegir-psicologo-online.html">
+          <span class="date" data-es="Terapia" data-en="Therapy">Terapia</span>
+          <h3 data-es="Cómo elegir un psicólogo online (sin equivocarte en el intento)" data-en="How to choose an online psychologist (and get it right)">Cómo elegir un psicólogo online (sin equivocarte en el intento)</h3>
           <span class="more" data-es="Leer" data-en="Read">Leer</span>
         </a>
       </div>
