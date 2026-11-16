@@ -282,7 +282,15 @@
     justify-content: center;
   }
 
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  /* Imagen: recorte centrado, bordes suaves, sin distorsión */
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* recorta para llenar el marco 4:5 */
+    object-position: center 30%; /* ligeramente alto: encuadre del rostro */
+    border-radius: var(--radius);
+    display: block;
+  }
 
   /* Texto de relleno cuando aún no hay foto */
   .photo .placeholder {
@@ -294,6 +302,9 @@
     text-align: center;
     padding: 1rem;
   }
+
+  /* El placeholder desaparece en cuanto exista la imagen */
+  .photo:has(img) .placeholder { display: none; }
 
   .about h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.3rem; }
 
@@ -619,6 +630,60 @@
     text-transform: uppercase;
     color: var(--accent-dark);
   }
+
+  /* =========================================================
+     CONMUTADOR DE IDIOMA
+     ========================================================= */
+  .lang-switch {
+    position: fixed;
+    top: 0.85rem;
+    right: 0.85rem;
+    z-index: 60;
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0.5rem 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+
+  /* Badge de idiomas del hero */
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-dark);
+    background: rgba(138, 154, 91, 0.07);
+  }
+
+  .lang-badge svg { width: 14px; height: 14px; fill: currentColor; flex: 0 0 auto; }
 </style>
 
 <!-- ===================== REDES SOCIALES ===================== -->
@@ -680,35 +745,46 @@
 </head>
 <body>
 
+  <!-- ===================== CONMUTADOR DE IDIOMA ===================== -->
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
+
   <!-- ===================== HEADER / HERO ===================== -->
   <header class="hero" id="inicio">
     <div class="wrap">
       <div class="hero-inner">
-        <span class="eyebrow">Terapia psicológica online</span>
-        <h1>Un espacio para detenerte, comprenderte y avanzar</h1>
-        <p class="lead">
+        <div class="lang-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.4a15 15 0 0 0-1.2-3.1A8 8 0 0 1 18.9 8zM12 4c.8 1 1.5 2.4 1.9 4h-3.8c.4-1.6 1.1-3 1.9-4zM4.3 14a8 8 0 0 1 0-4h2.7a17 17 0 0 0 0 4H4.3zm.8 2h2.4c.3 1.1.7 2.1 1.2 3.1A8 8 0 0 1 5.1 16zm2.4-8H5.1a8 8 0 0 1 3.6-3.1A15 15 0 0 0 7.5 8zM12 20c-.8-1-1.5-2.4-1.9-4h3.8c-.4 1.6-1.1 3-1.9 4zm2.3-6H9.7a15 15 0 0 1 0-4h4.6a15 15 0 0 1 0 4zm.2 5.1c.5-1 .9-2 1.2-3.1h2.4a8 8 0 0 1-3.6 3.1zM16.5 14a17 17 0 0 0 0-4h2.7a8 8 0 0 1 0 4h-2.7z"/></svg>
+          <span data-es="Sesiones en inglés y español" data-en="Sessions in English and Spanish">Sesiones en inglés y español</span>
+        </div>
+        <span class="eyebrow" data-es="Terapia psicológica online" data-en="Online psychological therapy">Terapia psicológica online</span>
+        <h1 data-es="Un espacio para detenerte, comprenderte y avanzar" data-en="A space to pause, understand yourself and move forward">Un espacio para detenerte, comprenderte y avanzar</h1>
+        <p class="lead" data-es="Mi trabajo consiste en acompañar procesos. No en dar soluciones rápidas ni en aplicar un método idéntico a todas las personas: cada proceso tiene su ritmo, y respetarlo es parte del tratamiento." data-en="My work is about accompanying processes — not offering quick solutions, and not applying the same method to everyone: each process has its own rhythm, and respecting it is part of the work.">
           Mi trabajo consiste en acompañar procesos. No en dar soluciones rápidas
           ni en aplicar un método idéntico a todas las personas: cada proceso tiene
           su ritmo, y respetarlo es parte del tratamiento.
         </p>
-        <p class="lead">
+        <p class="lead" data-es="Atiendo a personas adultas que atraviesan dificultades relacionadas con ansiedad, relaciones y autoconocimiento. Las sesiones se desarrollan en un espacio seguro y confidencial, con un encuadre claro desde la primera entrevista: qué trabajamos, con qué frecuencia y hacia dónde vamos." data-en="I work with adults facing difficulties related to anxiety, relationships and self-knowledge. Sessions take place in a safe and confidential space, with a clear framework from the first interview: what we are working on, how often, and where we are heading.">
           Atiendo a personas adultas que atraviesan dificultades relacionadas con
           ansiedad, relaciones y autoconocimiento. Las sesiones se desarrollan en un
           espacio seguro y confidencial, con un encuadre claro desde la primera
           entrevista: qué trabajamos, con qué frecuencia y hacia dónde vamos.
         </p>
-        <p class="lead">
+        <p class="lead" data-es="Licenciado en Psicología, con postgrado en Psicoterapia. Ejercicio desde la costa de Ecuador: de forma online para cualquier país, o de forma presencial en Santa Elena y Salinas, y en Olón y Montañita, siempre con cita previa." data-en="Degree in Psychology, postgraduate in Psychotherapy. I practise from the coast of Ecuador: online for any country, or in person in Santa Elena and Salinas, and in Olón and Montañita, always by appointment.">
           Licenciado en Psicología, con postgrado en Psicoterapia. Ejercicio desde
           la costa de Ecuador: de forma online para cualquier país, o de forma
           presencial en Santa Elena y Salinas, y en Olón y Montañita, siempre
           con cita previa.
         </p>
-        <p class="lead" style="color: var(--text);">
+        <p class="lead" style="color: var(--text);" data-es="No voy a prometerte que desaparezca lo que sientes. Te prometo algo más honesto: escucharte sin prisa y acompañarte mientras encuentras tu propia manera de estar mejor." data-en="I won't promise that what you feel will disappear. I promise something more honest: to listen without hurry and accompany you while you find your own way of feeling better.">
           No voy a prometerte que desaparezca lo que sientes. Te prometo algo más
           honesto: escucharte sin prisa y acompañarte mientras encuentras tu propia
           manera de estar mejor.
         </p>
-        <a class="btn btn-primary" href="#contacto" style="margin-top:0.6rem;">Solicitar primera consulta</a>
+        <a class="btn btn-primary" href="#contacto" style="margin-top:0.6rem;" data-es="Solicitar primera consulta" data-en="Request a first consultation">Solicitar primera consulta</a>
 
         <div class="hero-meta">
           <span><i class="dot"></i> Online · cualquier país</span>
@@ -722,24 +798,24 @@
   <!-- ===================== CÓMO FUNCIONA ===================== -->
   <section id="como-funciona">
     <div class="wrap">
-      <span class="eyebrow">Cómo funciona</span>
+      <span class="eyebrow" data-es="Cómo funciona" data-en="How it works">Cómo funciona</span>
       <hr class="hairline">
-      <h2 class="reveal">Tres pasos sencillos</h2>
+      <h2 class="reveal" data-es="Tres pasos sencillos" data-en="Three simple steps">Tres pasos sencillos</h2>
 
       <div class="steps">
         <div class="step reveal">
           <span class="num">01</span>
-          <h3>Agenda</h3>
+          <h3 data-es="Agenda" data-en="Book">Agenda</h3>
           <p>Escríbeme y elegimos juntos un día y una hora que te vengan bien. Sin formularios largos.</p>
         </div>
         <div class="step reveal">
           <span class="num">02</span>
-          <h3>Conéctate</h3>
+          <h3 data-es="Conéctate" data-en="Connect">Conéctate</h3>
           <p>El día de la sesión recibes un enlace. Solo necesitas un sitio tranquilo y conexión a internet.</p>
         </div>
         <div class="step reveal">
           <span class="num">03</span>
-          <h3>Empecemos</h3>
+          <h3 data-es="Empecemos" data-en="Let's begin">Empecemos</h3>
           <p>Hablamos de lo que te trae aquí, sin prisa, y decidimos juntos cómo seguir.</p>
         </div>
       </div>
@@ -749,30 +825,30 @@
   <!-- ===================== ESPECIALIDADES ===================== -->
   <section id="especialidades">
     <div class="wrap">
-      <span class="eyebrow">En qué puedo acompañarte</span>
+      <span class="eyebrow" data-es="En qué puedo acompañarte" data-en="What I can help you with">En qué puedo acompañarte</span>
       <hr class="hairline">
-      <h2 class="reveal">Especialidades</h2>
+      <h2 class="reveal" data-es="Especialidades" data-en="Areas of work">Especialidades</h2>
 
       <div class="cards">
         <article class="card reveal">
-          <h3>Ansiedad</h3>
-          <p>
+          <h3 data-es="Ansiedad" data-en="Anxiety">Ansiedad</h3>
+          <p data-es="Cuando la preocupación ocupa demasiado espacio: entender qué la activa, qué la mantiene y cómo recuperar cierta calma en el día a día." data-en="When worry takes up too much space: understanding what triggers it, what keeps it going, and how to regain some calm in daily life.">
             Cuando la preocupación ocupa demasiado espacio: entender qué la activa,
             qué la mantiene y cómo recuperar cierta calma en el día a día.
           </p>
         </article>
 
         <article class="card reveal">
-          <h3>Relaciones</h3>
-          <p>
+          <h3 data-es="Relaciones" data-en="Relationships">Relaciones</h3>
+          <p data-es="Vínculos que cansan, conflictos que se repiten o dificultades para poner límites. Espacio para mirarlos con calma y decidir qué quieres cambiar." data-en="Ties that wear you down, conflicts that repeat, or difficulty setting limits. A space to look at them calmly and decide what you want to change.">
             Vínculos que cansan, conflictos que se repiten o dificultades para poner
             límites. Espacio para mirarlos con calma y decidir qué quieres cambiar.
           </p>
         </article>
 
         <article class="card reveal">
-          <h3>Autoconocimiento</h3>
-          <p>
+          <h3 data-es="Autoconocimiento" data-en="Self-knowledge">Autoconocimiento</h3>
+          <p data-es="Para quienes no vienen con una queja concreta, sino con la sensación de querer entenderse mejor y vivir de una forma más coherente." data-en="For those who don't arrive with a specific complaint, but with the wish to understand themselves better and live in a more coherent way.">
             Para quienes no vienen con una queja concreta, sino con la sensación de
             querer entenderse mejor y vivir de una forma más coherente.
           </p>
@@ -785,28 +861,33 @@
   <section id="sobre-mi">
     <div class="wrap">
       <div class="about">
-        <!-- Sustituye el placeholder por: <img src="foto.jpg" alt="Nombre"> -->
+        <!--
+          Marco listo para la foto definitiva.
+          Cuando exista el archivo, descomenta la línea de la imagen y borra el
+          placeholder. La imagen se recorta a 4:5 con object-fit: cover.
+        -->
         <div class="photo reveal">
+          <!-- <img src="foto_luis.jpg" alt="Luis Sandoval, psicólogo" width="640" height="800" loading="lazy" decoding="async"> -->
           <span class="placeholder">Foto<br>provisional</span>
         </div>
 
         <div class="reveal">
-          <span class="eyebrow">Sobre mí</span>
-          <h2>Hola, soy Luis Sandoval</h2>
-          <p>
+          <span class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</span>
+          <h2 data-es="Hola, soy Luis Sandoval" data-en="Hello, I'm Luis Sandoval">Hola, soy Luis Sandoval</h2>
+          <p data-es="Soy Luis Sandoval, psicólogo. Acompaño a personas adultas que sienten que algo no termina de encajar. Me interesa escuchar de verdad, sin recetas rápidas ni discursos que no sirven para la vida real." data-en="I'm Luis Sandoval, a psychologist. I work with adults who feel that something isn't quite fitting. I'm interested in really listening, without quick recipes or speeches that don't hold up in real life.">
             Soy Luis Sandoval, psicólogo. Acompaño a personas adultas que sienten
             que algo no termina de encajar. Me interesa escuchar de verdad, sin
             recetas rápidas ni discursos que no sirven para la vida real.
           </p>
-          <p>
+          <p data-es="Trabajo desde la honestidad y el respeto: no hay dos personas iguales, ni dos procesos iguales. Mi papel es ofrecerte un lugar seguro y acompañarte mientras encuentras tus propias respuestas." data-en="I work from honesty and respect: no two people are alike, and no two processes are alike. My role is to offer you a safe place and accompany you while you find your own answers.">
             Trabajo desde la honestidad y el respeto: no hay dos personas iguales,
             ni dos procesos iguales. Mi papel es ofrecerte un lugar seguro y
             acompañarte mientras encuentras tus propias respuestas.
           </p>
-          <p>
+          <p data-es="Licenciado en Psicología. Postgrado en Psicoterapia." data-en="Degree in Psychology. Postgraduate in Psychotherapy.">
             Licenciado en Psicología. Postgrado en Psicoterapia.
           </p>
-          <p class="signature">— Luis Sandoval</p>
+          <p class="signature" data-es="— Luis Sandoval" data-en="— Luis Sandoval">— Luis Sandoval</p>
         </div>
       </div>
     </div>
@@ -815,22 +896,22 @@
   <!-- ===================== TESTIMONIOS ===================== -->
   <section id="testimonios">
     <div class="wrap">
-      <span class="eyebrow">Testimonios</span>
+      <span class="eyebrow" data-es="Testimonios" data-en="Testimonials">Testimonios</span>
       <hr class="hairline">
-      <h2 class="reveal">Lo que dicen algunas personas</h2>
+      <h2 class="reveal" data-es="Lo que dicen algunas personas" data-en="What some people say">Lo que dicen algunas personas</h2>
 
       <div class="quotes">
         <blockquote class="reveal">
-          <p>«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»</p>
-          <footer>— Testimonio anónimo</footer>
+          <p data-es="«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»" data-en="«I arrived with the feeling of being on pause, not really knowing where to go next. What helped most was not feeling judged. Finding that space of calm once a week changed the way I look at my days.»">«Llegué con la sensación de estar en pausa, sin saber muy bien por dónde seguir. Lo que más me ayudó fue no sentirme juzgada. Encontrar ese espacio de calma una vez a la semana me cambió la forma de mirar mis días.»</p>
+          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
         </blockquote>
         <blockquote class="reveal">
-          <p>«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»</p>
-          <footer>— Testimonio anónimo</footer>
+          <p data-es="«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»" data-en="«I was afraid of video calls; I thought it wouldn't be the same as being face to face. But the connection was very easy. After a few sessions it already felt like my moment of the week, for me.»">«Me daba miedo la videollamada, pensaba que no iba a ser lo mismo que estar cara a cara. Pero la verdad es que la conexión fue muy fácil. A las pocas sesiones ya lo sentía como mi momento de la semana para mí.»</p>
+          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
         </blockquote>
         <blockquote class="reveal">
-          <p>«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»</p>
-          <footer>— Testimonio anónimo</footer>
+          <p data-es="«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»" data-en="«I didn't come with a specific problem, just the feeling that something didn't fit. Talking without hurry, with someone who doesn't hand you magic recipes, helped me understand myself better and make decisions I had been postponing for a long time.»">«No venía con un problema concreto, solo con la sensación de que algo no encajaba. Hablar sin prisa, con alguien que no te da recetas mágicas, me ayudó a entenderme mejor y a tomar decisiones que llevaba tiempo posponiendo.»</p>
+          <footer data-es="— Testimonio anónimo" data-en="— Anonymous testimonial">— Testimonio anónimo</footer>
         </blockquote>
       </div>
     </div>
@@ -839,46 +920,46 @@
   <!-- ===================== TARIFAS Y MODALIDAD ===================== -->
   <section id="tarifas">
     <div class="wrap">
-      <span class="eyebrow">Tarifas y modalidad</span>
+      <span class="eyebrow" data-es="Tarifas y modalidad" data-en="Fees and format">Tarifas y modalidad</span>
       <hr class="hairline">
-      <h2 class="reveal" style="margin-bottom:2rem;">Claro desde el principio</h2>
+      <h2 class="reveal" style="margin-bottom:2rem;" data-es="Claro desde el principio" data-en="Clear from the start">Claro desde el principio</h2>
 
       <div class="fees">
         <div class="fees-price">
           <span class="fees-amount">25 USD</span>
-          <span class="fees-sub">Sesión de 50 minutos</span>
+          <span class="fees-sub" data-es="Sesión de 50 minutos" data-en="50-minute session">Sesión de 50 minutos</span>
         </div>
 
         <ul class="fees-list">
           <li>
-            <strong>Online</strong>
-            <span>Por videoconferencia, desde cualquier país.</span>
+            <strong data-es="Online" data-en="Online">Online</strong>
+            <span data-es="Por videoconferencia, desde cualquier país." data-en="By video call, from any country.">Por videoconferencia, desde cualquier país.</span>
           </li>
           <li>
-            <strong>Presencial en Santa Elena y Salinas</strong>
-            <span>Con cita previa.</span>
+            <strong data-es="Presencial en Santa Elena y Salinas" data-en="In person in Santa Elena and Salinas">Presencial en Santa Elena y Salinas</strong>
+            <span data-es="Con cita previa." data-en="By appointment.">Con cita previa.</span>
           </li>
           <li>
-            <strong>Presencial en Olón y Montañita</strong>
-            <span>Si estás cerca de la costa, con cita previa.</span>
+            <strong data-es="Presencial en Olón y Montañita" data-en="In person in Olón and Montañita">Presencial en Olón y Montañita</strong>
+            <span data-es="Si estás cerca de la costa, con cita previa." data-en="If you're near the coast, by appointment.">Si estás cerca de la costa, con cita previa.</span>
           </li>
           <li>
-            <strong>Pago</strong>
-            <span>Transferencia bancaria o PayPal.</span>
+            <strong data-es="Pago" data-en="Payment">Pago</strong>
+            <span data-es="Transferencia bancaria o PayPal." data-en="Bank transfer or PayPal.">Transferencia bancaria o PayPal.</span>
           </li>
           <li>
-            <strong>Cancelación</strong>
-            <span>Con 24 horas de antelación. Las cancelaciones con menos de 24 horas se abonan íntegras.</span>
+            <strong data-es="Cancelación" data-en="Cancellation">Cancelación</strong>
+            <span data-es="Con 24 horas de antelación. Las cancelaciones con menos de 24 horas se abonan íntegras." data-en="With 24 hours' notice. Cancellations under 24 hours are charged in full.">Con 24 horas de antelación. Las cancelaciones con menos de 24 horas se abonan íntegras.</span>
           </li>
         </ul>
       </div>
 
-      <p class="fees-note">
+      <p class="fees-note" data-es="Si tras la primera sesión sientes que no soy la persona adecuada, dímelo con confianza. Te ayudo a orientar la búsqueda hacia otro profesional." data-en="If after the first session you feel I'm not the right person to accompany you, tell me openly. I'll help you look for another professional.">
         Si tras la primera sesión sientes que no soy la persona adecuada, dímelo
         con confianza. Te ayudo a orientar la búsqueda hacia otro profesional.
       </p>
 
-      <p class="fees-note" style="border:0;padding-top:0;">
+      <p class="fees-note" id="fees-en" style="border:0;padding-top:0;">
         <strong>English —</strong> 50-minute session: 25 USD. Online (any country) ·
         In person in Santa Elena / Salinas (by appointment) ·
         In person in Olón / Montañita (by appointment). Payment by bank transfer or PayPal.
@@ -890,14 +971,14 @@
   <!-- ===================== FAQ ===================== -->
   <section id="faq">
     <div class="wrap">
-      <span class="eyebrow">Dudas frecuentes</span>
+      <span class="eyebrow" data-es="Dudas frecuentes" data-en="Frequent questions">Dudas frecuentes</span>
       <hr class="hairline">
-      <h2 class="reveal" style="margin-bottom:2rem;">Preguntas antes de empezar</h2>
+      <h2 class="reveal" style="margin-bottom:2rem;" data-es="Preguntas antes de empezar" data-en="Questions before you start">Preguntas antes de empezar</h2>
 
       <div class="faq">
         <details name="faq">
-          <summary>¿Cuánto cuesta la sesión?</summary>
-          <div class="answer">
+          <summary data-es="¿Cuánto cuesta la sesión?" data-en="How much does a session cost?">¿Cuánto cuesta la sesión?</summary>
+          <div class="answer" data-es="La sesión tiene un valor de 25 USD (o su equivalente en moneda local). Las tarifas se explican con claridad antes de la primera cita, sin cargos ocultos ni paquetes obligatorios." data-en="A session is 25 USD (or its equivalent in local currency). Fees are explained clearly before the first appointment, with no hidden charges or compulsory packages.">
             La sesión tiene un valor de 25 USD (o su equivalente en moneda local).
             Las tarifas se explican con claridad antes de la primera cita, sin cargos
             ocultos ni paquetes obligatorios.
@@ -905,16 +986,16 @@
         </details>
 
         <details name="faq">
-          <summary>¿Lo que hablamos es confidencial?</summary>
-          <div class="answer">
+          <summary data-es="¿Lo que hablamos es confidencial?" data-en="Is what we talk about confidential?">¿Lo que hablamos es confidencial?</summary>
+          <div class="answer" data-es="Sí. Todo lo que compartes en sesión es confidencial y forma parte del secreto profesional, con las excepciones que marca la ley." data-en="Yes. Everything you share in a session is confidential and covered by professional secrecy, with the exceptions established by law.">
             Sí. Todo lo que compartes en sesión es confidencial y forma parte del
             secreto profesional, con las excepciones que marca la ley.
           </div>
         </details>
 
         <details name="faq">
-          <summary>¿Qué necesito para la videoconferencia?</summary>
-          <div class="answer">
+          <summary data-es="¿Qué necesito para la videoconferencia?" data-en="What do I need for the video call?">¿Qué necesito para la videoconferencia?</summary>
+          <div class="answer" data-es="Un dispositivo con cámara y micrófono, conexión estable a internet y un sitio tranquilo donde no te interrumpan. Te envío el enlace antes de cada sesión; no hace falta instalar nada complicado." data-en="A device with camera and microphone, a stable internet connection, and a quiet place where you won't be interrupted. I send you the link before each session; there is nothing complicated to install.">
             Un dispositivo con cámara y micrófono, conexión estable a internet y un
             sitio tranquilo donde no te interrumpan. Te envío el enlace antes de cada
             sesión; no hace falta instalar nada complicado.
@@ -922,24 +1003,24 @@
         </details>
 
         <details name="faq">
-          <summary>¿Cuánto dura una sesión?</summary>
-          <div class="answer">
+          <summary data-es="¿Cuánto dura una sesión?" data-en="How long does a session last?">¿Cuánto dura una sesión?</summary>
+          <div class="answer" data-es="Las sesiones duran 50 minutos. Si necesitamos otro formato, lo hablamos antes." data-en="Sessions last 50 minutes. If we need a different format, we'll talk about it beforehand.">
             Las sesiones duran 50 minutos. Si necesitamos otro formato, lo
             hablamos antes.
           </div>
         </details>
 
         <details name="faq">
-          <summary>¿La terapia online funciona igual que la presencial?</summary>
-          <div class="answer">
+          <summary data-es="¿La terapia online funciona igual que la presencial?" data-en="Does online therapy work the same as in-person therapy?">¿La terapia online funciona igual que la presencial?</summary>
+          <div class="answer" data-es="Para muchas personas sí: la videoconferencia permite el mismo trabajo, con la ventaja de no tener que desplazarte." data-en="For many people, yes: a video call allows the same work, with the advantage of not having to travel.">
             Para muchas personas sí: la videoconferencia permite el mismo trabajo,
             con la ventaja de no tener que desplazarte.
           </div>
         </details>
 
         <details name="faq">
-          <summary>¿Qué pasa si necesito cancelar?</summary>
-          <div class="answer">
+          <summary data-es="¿Qué pasa si necesito cancelar?" data-en="What if I need to cancel?">¿Qué pasa si necesito cancelar?</summary>
+          <div class="answer" data-es="Cancela con al menos 24 horas de antelación. Así podemos reorganizar la agenda sin que pierdas la sesión." data-en="Cancel at least 24 hours in advance. That way we can reorganise the schedule without you losing the session.">
             Cancela con al menos 24 horas de antelación. Así podemos reorganizar
             la agenda sin que pierdas la sesión.
           </div>
@@ -951,24 +1032,24 @@
   <!-- ===================== BLOG ===================== -->
   <section id="blog">
     <div class="wrap">
-      <span class="eyebrow">Lecturas</span>
+      <span class="eyebrow" data-es="Lecturas" data-en="Reading">Lecturas</span>
       <hr class="hairline">
-      <h2 class="reveal" style="margin-bottom:2rem;">Artículos</h2>
+      <h2 class="reveal" style="margin-bottom:2rem;" data-es="Artículos" data-en="Articles">Artículos</h2>
       <div class="articles">
         <a class="article-row" href="https://luissandovalpsico.github.io/blog/ansiedad.html">
-          <span class="date">Ansiedad</span>
-          <h3>Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</h3>
-          <span class="more">Leer</span>
+          <span class="date" data-es="Ansiedad" data-en="Anxiety">Ansiedad</span>
+          <h3 data-es="Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)" data-en="How to manage anxiety in 3 steps (no magic promises)">Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</h3>
+          <span class="more" data-es="Leer" data-en="Read">Leer</span>
         </a>
         <a class="article-row" href="https://luissandovalpsico.github.io/blog/pareja.html">
-          <span class="date">Relaciones</span>
-          <h3>Por qué repites las mismas discusiones con tu pareja</h3>
-          <span class="more">Leer</span>
+          <span class="date" data-es="Relaciones" data-en="Relationships">Relaciones</span>
+          <h3 data-es="Por qué repites las mismas discusiones con tu pareja" data-en="Why you keep having the same arguments with your partner">Por qué repites las mismas discusiones con tu pareja</h3>
+          <span class="more" data-es="Leer" data-en="Read">Leer</span>
         </a>
         <a class="article-row" href="https://luissandovalpsico.github.io/blog/primera-sesion.html">
-          <span class="date">Terapia</span>
-          <h3>Terapia online: qué pasa realmente en la primera sesión</h3>
-          <span class="more">Leer</span>
+          <span class="date" data-es="Terapia" data-en="Therapy">Terapia</span>
+          <h3 data-es="Terapia online: qué pasa realmente en la primera sesión" data-en="Online therapy: what really happens in the first session">Terapia online: qué pasa realmente en la primera sesión</h3>
+          <span class="more" data-es="Leer" data-en="Read">Leer</span>
         </a>
       </div>
     </div>
@@ -976,10 +1057,10 @@
 
   <!-- ===================== CTA FINAL ===================== -->
   <section class="closing" id="contacto">
-    <span class="eyebrow">Primer paso</span>
-    <h2>Si te resuena, escríbeme</h2>
-    <p>Cuéntame brevemente qué te trae aquí. Te respondo yo, no un formulario automático.</p>
-    <a class="btn btn-primary" href="https://wa.me/573135578578">Solicitar primera consulta</a>
+    <span class="eyebrow" data-es="Primer paso" data-en="First step">Primer paso</span>
+    <h2 data-es="Si te resuena, escríbeme" data-en="If this resonates, write to me">Si te resuena, escríbeme</h2>
+    <p data-es="Cuéntame brevemente qué te trae aquí. Te respondo yo, no un formulario automático." data-en="Tell me briefly what brings you here. I answer myself, not an automated form.">Cuéntame brevemente qué te trae aquí. Te respondo yo, no un formulario automático.</p>
+    <a class="btn btn-primary" href="https://wa.me/573135578578" data-es="Solicitar primera consulta" data-en="Request a first consultation">Solicitar primera consulta</a>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
@@ -989,12 +1070,12 @@
       <span>
         <a href="mailto:luissandovalpsico2.0@gmail.com">luissandovalpsico2.0@gmail.com</a>
       </span>
-      <span class="legal">
+      <span class="legal" data-es="Aviso legal · Privacidad" data-en="Legal notice · Privacy">
         Aviso legal · Privacidad
       </span>
     </div>
     <div class="wrap siblings">
-      <span>Proyecto hermano:</span>
+      <span data-es="Proyecto hermano:" data-en="Sister project:">Proyecto hermano:</span>
       <a href="https://luissandovalpsico.github.io/gourmet-restaurant/" target="_blank" rel="noopener">Gourmet Restaurant</a>
       <a href="https://luissandovalpsico.github.io/documental/" target="_blank" rel="noopener">The Heart of the Beast</a>
     </div>
@@ -1013,6 +1094,47 @@
      1. Año del footer
      ========================================================= */
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* =========================================================
+     CONMUTADOR DE IDIOMA (ES / EN)
+     ---------------------------------------------------------
+     Cada elemento con data-es / data-en cambia su texto sin recargar.
+     El idioma elegido se recuerda en localStorage.
+     ========================================================= */
+  (function () {
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
+
+    function aplicar(lang) {
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      // La nota de tarifas en inglés solo tiene sentido en español
+      const notaEn = document.getElementById('fees-en');
+      if (notaEn) notaEn.style.display = lang === 'es' ? '' : 'none';
+
+      document.documentElement.lang = lang;
+      btnEs.setAttribute('aria-pressed', lang === 'es');
+      btnEn.setAttribute('aria-pressed', lang === 'en');
+      document.title = lang === 'en'
+        ? "Online therapy — Luis Sandoval, psychologist"
+        : "Terapia online — Un espacio para detenerte, comprenderte y avanzar";
+      const md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute('content', lang === 'en'
+        ? "Psychologist in Santa Elena, Salinas, Olón and Montañita. Online therapy by video call worldwide. 50-minute sessions."
+        : "Psicólogo en Santa Elena, Salinas, Olón y Montañita. Terapia online por videoconferencia para cualquier país. Sesiones de 50 minutos, 25 USD.");
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    btnEs.addEventListener('click', () => aplicar('es'));
+    btnEn.addEventListener('click', () => aplicar('en'));
+
+    let guardado = 'es';
+    try { guardado = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (guardado === 'en') aplicar('en');
+  })();
+
 
   /* =========================================================
      2. Acordeón: solo una pregunta abierta a la vez
