@@ -623,9 +623,33 @@
     font-size: 1.02rem; line-height: 1.5; color: var(--text);
     transition: border-color 0.3s ease, color 0.3s ease; }
   .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+  /* ===== Conmutador de idioma ===== */
+  .lang-switch {
+    position: fixed; top: 0.85rem; right: 0.85rem; z-index: 60;
+    display: flex; border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; padding: 0.5rem 0.8rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--text-soft); cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
 </style>
 </head>
 <body>
+
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
 
   <header class="article-head">
     <div class="wrap">
@@ -642,7 +666,7 @@
 
   <article class="wrap prose">
 
-    <p>
+    <p data-es="Hay discusiones que no son sobre el tema que parecen. Empiezan por los platos sin fregar, por una llegada tarde o por el tono de un mensaje, y dos horas después estáis los dos agotados, sin recordar exactamente cómo habéis llegado hasta ahí. Si esto te suena, no estás condenado a repetirlo, pero tampoco se arregla con «esforzarse más»." data-en="Some arguments are not about what they seem to be about. They start over the unwashed dishes, a late arrival or the tone of a message, and two hours later you are both exhausted, unable to remember exactly how you got there. If this sounds familiar, you are not condemned to repeat it — but it is not fixed by «trying harder» either.">
       Hay discusiones que no son sobre el tema que parecen. Empiezan por los
       platos sin fregar, por una llegada tarde o por el tono de un mensaje, y dos
       horas después estáis los dos agotados, sin recordar exactamente cómo
@@ -650,7 +674,7 @@
       pero tampoco se arregla con «esforzarse más».
     </p>
 
-    <h2>Por qué se repite la misma pelea</h2>
+    <h2 data-es="Por qué se repite la misma pelea" data-en="Why the same fight keeps happening">Por qué se repite la misma pelea</h2>
 
     <p>
       Las parejas no discuten al azar. Con el tiempo se instala un
@@ -666,34 +690,34 @@
       retira, la conversación se queda a medias y se cierra sin resolver nada.
     </p>
 
-    <p>
+    <p data-es="La próxima vez que pase algo parecido, las dos personas llegan ya con la herida anterior a flor de piel. Y así, en bucle." data-en="Next time something similar happens, both people arrive with the previous wound already raw. And so it goes, in a loop.">
       La próxima vez que pase algo parecido, las dos personas llegan ya con la
       herida anterior a flor de piel. Y así, en bucle.
     </p>
 
-    <h2>El problema no es el tema, es la necesidad</h2>
+    <h2 data-es="El problema no es el tema, es la necesidad" data-en="The problem is not the topic, it's the need">El problema no es el tema, es la necesidad</h2>
 
-    <p>
+    <p data-es="Debajo de casi todas las discusiones repetidas hay una necesidad que no se nombra. A veces es sentirse tenido en cuenta. A veces es seguridad. A veces es sentirse deseado o respetado. A veces es simplemente sentir que lo que uno dice importa." data-en="Underneath almost all repeated arguments there is an unnamed need. Sometimes it is feeling taken into account. Sometimes it is security. Sometimes it is feeling desired or respected. Sometimes it is simply feeling that what you say matters.">
       Debajo de casi todas las discusiones repetidas hay una necesidad que no se
       nombra. A veces es sentirse tenido en cuenta. A veces es seguridad. A veces
       es sentirse deseado o respetado. A veces es simplemente sentir que lo que
       uno dice importa.
     </p>
 
-    <p>
+    <p data-es="Mientras habláis del plato o de la llegada tarde, ninguno de los dos está hablando de eso. Ahí es donde empieza a girar la rueda." data-en="While you talk about the dish or the late arrival, neither of you is talking about that. That is where the wheel starts turning.">
       Mientras habláis del plato o de la llegada tarde, ninguno de los dos está
       hablando de eso. Ahí es donde empieza a girar la rueda.
     </p>
 
     <blockquote>
-      <p>«Discutir del tema es fácil. Nombrar la necesidad detrás del tema es lo que cambia la conversación.»</p>
+      <p data-es="«Discutir del tema es fácil. Nombrar la necesidad detrás del tema es lo que cambia la conversación.»" data-en="«Arguing about the topic is easy. Naming the need behind the topic is what changes the conversation.»">«Discutir del tema es fácil. Nombrar la necesidad detrás del tema es lo que cambia la conversación.»</p>
     </blockquote>
 
-    <h2>Tres cosas que puedes hacer esta misma semana</h2>
+    <h2 data-es="Tres cosas que puedes hacer esta misma semana" data-en="Three things you can do this week">Tres cosas que puedes hacer esta misma semana</h2>
 
-    <h2><span class="step">Uno</span>Nombrar el patrón, no a la persona</h2>
+    <h2 data-es="Nombrar el patrón, no a la persona" data-en="Name the pattern, not the person"><h2><span class="step" data-es="Uno" data-en="One">Uno</span>Nombrar el patrón, no a la persona</h2>
 
-    <p>
+    <p data-es="En un momento tranquilo —no en mitad de una pelea— prueba a decir algo así: «Me he dado cuenta de que siempre terminamos igual: uno pide, el otro se cierra, y los dos nos quedamos mal. No te lo digo para culparte, te lo digo porque quiero salir de ahí»." data-en="In a calm moment —not mid-fight— try saying something like: «I've noticed we always end up the same way: one of us asks, the other shuts down, and we both feel bad. I'm not saying it to blame you, I'm saying it because I want out of there».">
       En un momento tranquilo —no en mitad de una pelea— prueba a decir algo así:
       «Me he dado cuenta de que siempre terminamos igual: uno pide, el otro se
       cierra, y los dos nos quedamos mal. No te lo digo para culparte, te lo digo
@@ -705,30 +729,30 @@
       defensa. Nadie se está defendiendo de una acusación porque no hay acusación.
     </p>
 
-    <h2><span class="step">Dos</span>Pedir lo que quieres, no lo que no quieres</h2>
+    <h2 data-es="Pedir lo que quieres, no lo que no quieres" data-en="Ask for what you want, not what you don't"><h2><span class="step" data-es="Dos" data-en="Two">Dos</span>Pedir lo que quieres, no lo que no quieres</h2>
 
-    <p>
+    <p data-es="«No me escuchas» es una queja. «Cuando llegas y me cuentas cómo te ha ido el día antes de mirar el móvil, me siento importante» es una petición. La segunda se puede cumplir; la primera, no." data-en="«You don't listen to me» is a complaint. «When you come home and tell me about your day before checking your phone, I feel important» is a request. The second can be met; the first cannot.">
       «No me escuchas» es una queja. «Cuando llegas y me cuentas cómo te ha ido el
       día antes de mirar el móvil, me siento importante» es una petición. La
       segunda se puede cumplir; la primera, no.
     </p>
 
-    <p>
+    <p data-es="Es más difícil de decir, porque pide exponerse. También funciona mejor." data-en="It is harder to say, because it asks you to expose yourself. It also works better.">
       Es más difícil de decir, porque pide exponerse. También funciona mejor.
     </p>
 
-    <h2><span class="step">Tres</span>Bajar el ritmo antes de la cuarta frase</h2>
+    <h2 data-es="Bajar el ritmo antes de la cuarta frase" data-en="Slow down before the fourth sentence"><h2><span class="step" data-es="Tres" data-en="Three">Tres</span>Bajar el ritmo antes de la cuarta frase</h2>
 
-    <p>
+    <p data-es="Cuando la conversación se acelera, el cerebro deja de escuchar y empieza a preparar la réplica. Una señal pactada —levantar la mano, decir una palabra concreta, pedir cinco minutos— permite parar sin que nadie sienta que está cediendo. Cuanto antes se frena, más fácil se recupera." data-en="When a conversation speeds up, the brain stops listening and starts preparing its reply. An agreed signal —a raised hand, a specific word, asking for five minutes— lets you stop without anyone feeling they are giving in. The earlier you brake, the easier it is to recover.">
       Cuando la conversación se acelera, el cerebro deja de escuchar y empieza a
       preparar la réplica. Una señal pactada —levantar la mano, decir una palabra
       concreta, pedir cinco minutos— permite parar sin que nadie sienta que está
       cediendo. Cuanto antes se frena, más fácil se recupera.
     </p>
 
-    <h2>Cuándo la conversación no basta</h2>
+    <h2 data-es="Cuándo la conversación no basta" data-en="When conversation isn't enough">Cuándo la conversación no basta</h2>
 
-    <p>
+    <p data-es="Estas herramientas sirven para conversaciones que se han enquistado, no para todo. Si hay desprecio, humillación, control, amenazas o violencia —aunque sea verbal— no es un patrón de comunicación: es otra cosa, y no se resuelve conversando en pareja. En esos casos conviene buscar apoyo individual y recursos especializados." data-en="These tools are for stuck conversations, not for everything. If there is contempt, humiliation, control, threats or violence —even verbal— it is not a communication pattern: it is something else, and it is not solved by talking it through as a couple. In those cases it is better to seek individual support and specialised services.">
       Estas herramientas sirven para conversaciones que se han enquistado, no para
       todo. Si hay desprecio, humillación, control, amenazas o violencia —aunque
       sea verbal— no es un patrón de comunicación: es otra cosa, y no se resuelve
@@ -736,38 +760,38 @@
       recursos especializados.
     </p>
 
-    <p>
+    <p data-es="Si lo que hay es desgaste, cansancio y la sensación de que ya no sabéis hablar sin acabar mal, la terapia de pareja o el trabajo individual pueden ayudar a entender qué sostiene el bucle. No para decidir si seguir o no, sino para poder decidirlo con claridad." data-en="If what there is is wear, tiredness and the feeling that you can no longer talk without ending badly, couple therapy or individual work can help understand what sustains the loop. Not to decide whether to continue or not, but to be able to decide it clearly.">
       Si lo que hay es desgaste, cansancio y la sensación de que ya no sabéis
       hablar sin acabar mal, la terapia de pareja o el trabajo individual pueden
       ayudar a entender qué sostiene el bucle. No para decidir si seguir o no, sino
       para poder decidirlo con claridad.
     </p>
 
-    <h2>Un ejercicio concreto para esta semana</h2>
+    <h2 data-es="Un ejercicio concreto para esta semana" data-en="A concrete exercise for this week">Un ejercicio concreto para esta semana</h2>
 
-    <p>
+    <p data-es="Elige una discusión reciente que se repita y, por separado, escribid cada uno tres frases. La primera: qué hice yo; sin adornos, sin justificación. La segunda: qué sentí debajo de la rabia o del cierre. La tercera: qué necesitaba de ti en ese momento, dicho como una petición que se pueda cumplir." data-en="Choose a recent argument that repeats and, separately, each of you writes three sentences. First: what I did; no decoration, no justification. Second: what I felt underneath the anger or the shutdown. Third: what I needed from you in that moment, said as a request that can be met.">
       Elige una discusión reciente que se repita y, por separado, escribid cada uno
       tres frases. La primera: qué hice yo; sin adornos, sin justificación. La
       segunda: qué sentí debajo de la rabia o del cierre. La tercera: qué necesitaba
       de ti en ese momento, dicho como una petición que se pueda cumplir.
     </p>
 
-    <p>
+    <p data-es="No se comparte dentro de una pelea: se comparte cuando los dos estéis tranquilos. El objetivo no es tener razón, es ver el mismo episodio desde dos posiciones que ninguno de los dos tenía completas." data-en="You don't share it mid-fight: you share it when you are both calm. The aim is not to be right, it is to see the same episode from two positions neither of you had complete.">
       No se comparte dentro de una pelea: se comparte cuando los dos estéis
       tranquilos. El objetivo no es tener razón, es ver el mismo episodio desde dos
       posiciones que ninguno de los dos tenía completas.
     </p>
 
-    <p>
+    <p data-es="Muchas parejas descubren en ese ejercicio algo muy simple y muy incómodo a la vez: llevan años discutiendo por un gesto de atención que ninguno de los dos sabía pedir de otra forma. Nombrarlo no lo resuelve de golpe, pero corta el bucle lo suficiente para poder hablar de verdad." data-en="Many couples discover something very simple and very uncomfortable in that exercise: they have spent years arguing over a gesture of attention that neither of them knew how to ask for in another way. Naming it doesn't solve it at once, but it cuts the loop enough to actually talk.">
       Muchas parejas descubren en ese ejercicio algo muy simple y muy incómodo a la
       vez: llevan años discutiendo por un gesto de atención que ninguno de los dos
       sabía pedir de otra forma. Nombrarlo no lo resuelve de golpe, pero corta el
       bucle lo suficiente para poder hablar de verdad.
     </p>
 
-    <h2>Lo que no vas a encontrar aquí</h2>
+    <h2 data-es="Lo que no vas a encontrar aquí" data-en="What you won't find here">Lo que no vas a encontrar aquí</h2>
 
-    <p>
+    <p data-es="No hay una técnica infalible ni una frase mágica que haga que el otro cambie. Tampoco hay una forma correcta de discutir: hay formas que dejan algo utilizable después y formas que solo dejan cansancio. Elegir entre unas y otras, la mayoría de las veces, no depende del amor que os tengáis —de eso casi nunca ha faltado— sino de las herramientas que tengáis para hablar cuando el tema escuece." data-en="There is no foolproof technique or magic phrase that makes the other person change. Nor is there a correct way to argue: there are ways that leave something usable afterwards and ways that only leave tiredness. Choosing between them, most of the time, doesn't depend on the love you have for each other —that has rarely been missing— but on the tools you have for talking when the topic stings.">
       No hay una técnica infalible ni una frase mágica que haga que el otro cambie.
       Tampoco hay una forma correcta de discutir: hay formas que dejan algo utilizable
       después y formas que solo dejan cansancio. Elegir entre unas y otras, la mayoría
@@ -783,8 +807,8 @@
 
 
     <div class="related">
-      <h2>Te puede interesar</h2>
-      <p>Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente.</p>
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <p data-es="Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente." data-en="When the wear comes with constant worry, these two readings are usually the next step.">Cuando el desgaste viene acompañado de preocupación constante, estas dos lecturas suelen ser el paso siguiente.</p>
       <ul>
         <li><a href="https://luissandovalpsico.github.io/blog/ansiedad.html">Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</a></li>
         <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
@@ -792,8 +816,8 @@
     </div>
 
     <div class="cta-box">
-      <h2>Si las conversaciones ya no llegan</h2>
-      <p>Podemos trabajar el patrón que se repite, en sesiones de 50 minutos, a tu ritmo.</p>
+      <h2 data-es="Si las conversaciones ya no llegan" data-en="If conversations no longer get through">Si las conversaciones ya no llegan</h2>
+      <p data-es="Podemos trabajar el patrón que se repite, en sesiones de 50 minutos, a tu ritmo." data-en="We can work on the pattern that repeats, in 50-minute sessions, at your pace.">Podemos trabajar el patrón que se repite, en sesiones de 50 minutos, a tu ritmo.</p>
       <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
       <p style="margin-top:1rem;font-size:0.85rem;">
         <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
@@ -820,5 +844,27 @@
     <span class="sr-only">WhatsApp</span>
   </a>
 
+
+  <script>
+  /* Conmutador ES / EN por atributos data-es / data-en */
+  (function () {
+    const bEs = document.getElementById('btn-es'), bEn = document.getElementById('btn-en');
+    function aplicar(lang) {
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      document.documentElement.lang = lang;
+      bEs.setAttribute('aria-pressed', lang === 'es');
+      bEn.setAttribute('aria-pressed', lang === 'en');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    bEs.addEventListener('click', () => aplicar('es'));
+    bEn.addEventListener('click', () => aplicar('en'));
+    let g = 'es';
+    try { g = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (g === 'en') aplicar('en');
+  })();
+  </script>
 </body>
 </html>
