@@ -576,6 +576,49 @@
     .reveal { opacity: 1; transform: none; transition: none; }
     * { transition: none !important; }
   }
+
+  /* =========================================================
+     LISTA DE ARTÍCULOS DEL BLOG
+     ========================================================= */
+  .articles { display: grid; gap: 0; border-top: 1px solid var(--line); }
+
+  .article-row {
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  @media (min-width: 760px) {
+    .article-row { grid-template-columns: 120px 1fr auto; align-items: baseline; }
+  }
+
+  .article-row .date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  .article-row h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.3s ease;
+  }
+
+  .article-row:hover h3 { color: var(--accent-dark); }
+
+  .article-row .more {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
 </style>
 
 <!-- ===================== REDES SOCIALES ===================== -->
@@ -901,6 +944,32 @@
             la agenda sin que pierdas la sesión.
           </div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG ===================== -->
+  <section id="blog">
+    <div class="wrap">
+      <span class="eyebrow">Lecturas</span>
+      <hr class="hairline">
+      <h2 class="reveal" style="margin-bottom:2rem;">Artículos</h2>
+      <div class="articles">
+        <a class="article-row" href="https://luissandovalpsico.github.io/blog/ansiedad.html">
+          <span class="date">Ansiedad</span>
+          <h3>Cómo gestionar la ansiedad en 3 pasos (sin promesas mágicas)</h3>
+          <span class="more">Leer</span>
+        </a>
+        <a class="article-row" href="https://luissandovalpsico.github.io/blog/pareja.html">
+          <span class="date">Relaciones</span>
+          <h3>Por qué repites las mismas discusiones con tu pareja</h3>
+          <span class="more">Leer</span>
+        </a>
+        <a class="article-row" href="https://luissandovalpsico.github.io/blog/primera-sesion.html">
+          <span class="date">Terapia</span>
+          <h3>Terapia online: qué pasa realmente en la primera sesión</h3>
+          <span class="more">Leer</span>
+        </a>
       </div>
     </div>
   </section>
