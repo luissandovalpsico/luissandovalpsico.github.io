@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo elegir un psicólogo online (sin equivocarte en el intento) — Luis Sandoval, psicólogo</title>
+<meta name="description" content="Qué mirar antes de reservar una sesión online: formación, encuadre, confidencialidad y señales de alarma.">
+<meta name="author" content="Luis Sandoval">
+<link rel="canonical" href="https://luissandovalpsico.github.io/blog/elegir-psicologo-online.html">
+<meta property="og:title" content="Cómo elegir un psicólogo online (sin equivocarte en el intento)">
+<meta property="og:description" content="Qué mirar antes de reservar una sesión online: formación, encuadre, confidencialidad y señales de alarma.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luissandovalpsico.github.io/blog/elegir-psicologo-online.html">
+<meta property="og:site_name" content="Luis Sandoval — Psicología">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     TOKENS DE DISEÑO
+     ========================================================= */
+  :root {
+    --bg: #F9F8F6;          /* blanco roto cálido */
+    --text: #333333;        /* gris oscuro */
+    --text-soft: #6b6b68;   /* texto secundario */
+    --accent: #8A9A5B;      /* verde salvia */
+    --accent-dark: #6f7d47;
+    --line: #e3e0d9;
+    --card: #fdfdfc;
+    --serif: "Lora", Georgia, serif;
+    --sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max: 1080px;
+    --radius: 4px;
+  }
+
+  /* =========================================================
+     BASE
+     ========================================================= */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* Contenedor común */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Secciones: mucho aire entre bloques */
+  section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+
+  /* Etiqueta pequeña de sección */
+  .eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* Línea fina de acento */
+  .hairline {
+    width: 48px;
+    height: 1px;
+    border: 0;
+    margin: 0 0 2rem;
+    background: var(--accent);
+  }
+
+  /* =========================================================
+     BOTONES
+     ========================================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    min-height: 52px;                 /* zona táctil cómoda */
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 0 6px 20px rgba(138, 154, 91, 0.22);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+  }
+
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     HEADER / HERO
+     ========================================================= */
+  header.hero {
+    padding: clamp(4.5rem, 11vw, 9rem) 0 clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .hero-inner { max-width: 720px; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    margin-bottom: 1.6rem;
+  }
+
+  .hero .lead {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 300;
+    color: var(--text-soft);
+    max-width: 56ch;
+    margin-bottom: 2.4rem;
+  }
+
+  /* Detalle suave: marca de agua tipográfica opcional a la derecha */
+  .hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  .hero-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+  /* Punto verde de acento */
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  /* =========================================================
+     CÓMO FUNCIONA
+     ========================================================= */
+  .steps {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  }
+
+  .step { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+
+  .step .num {
+    display: block;
+    margin-bottom: 0.9rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .step h3 { font-size: 1.25rem; margin-bottom: 0.7rem; }
+
+  .step p { font-size: 0.95rem; font-weight: 300; color: var(--text-soft); }
+
+  /* =========================================================
+     ESPECIALIDADES
+     ========================================================= */
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .card {
+    padding: 2rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+  .card p { font-size: 0.94rem; font-weight: 300; color: var(--text-soft); }
+
+  .card .tag {
+    display: block;
+    margin-top: 1.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     SOBRE MÍ
+     ========================================================= */
+  .about {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 860px) {
+    .about { grid-template-columns: 320px 1fr; gap: 4rem; }
+  }
+
+  /* Marco de la foto: si no hay imagen, muestra un bloque sobrio */
+  .photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #f1efe9 0%, #e7e4dc 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Imagen: recorte centrado, bordes suaves, sin distorsión */
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* recorta para llenar el marco 4:5 */
+    object-position: center 30%; /* ligeramente alto: encuadre del rostro */
+    border-radius: var(--radius);
+    display: block;
+  }
+
+  /* Texto de relleno cuando aún no hay foto */
+  .photo .placeholder {
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a9a69d;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* El placeholder desaparece en cuanto exista la imagen */
+  .photo:has(img) .placeholder { display: none; }
+
+  .about h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1.3rem; }
+
+  .about p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.1rem; }
+
+  .about .signature {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--text);
+    margin-top: 1.6rem;
+  }
+
+  /* =========================================================
+     TESTIMONIOS
+     ========================================================= */
+  .quotes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 860px) {
+    .quotes { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1.75rem;
+    border-left: 2px solid var(--accent);
+    background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  blockquote p {
+    font-family: var(--serif);
+    font-size: 1.03rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  blockquote footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     TARIFAS Y MODALIDAD
+     ========================================================= */
+  .fees {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  @media (min-width: 780px) {
+    .fees { grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+  }
+
+  .fees-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 780px) {
+    .fees-price { border-bottom: 0; border-right: 1px solid var(--line); padding: 0 2rem 0 0; }
+  }
+
+  .fees-amount {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--accent-dark);
+    line-height: 1;
+  }
+
+  .fees-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .fees-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+
+  .fees-list li { display: grid; gap: 0.15rem; }
+
+  .fees-list strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .fees-list span {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  .fees-note {
+    margin-top: 1.4rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     FAQ (acordeón con <details>, sin JS necesario)
+     ========================================================= */
+  .faq { max-width: 780px; }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.35rem 0;
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.25s ease;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary:hover { color: var(--accent-dark); }
+
+  /* Signo + / − dibujado en CSS */
+  .faq summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+  }
+
+  .faq details[open] summary::after { transform: rotate(-135deg); }
+
+  .faq .answer {
+    padding: 0 2rem 1.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-soft);
+  }
+
+  /* =========================================================
+     CIERRE / CTA FINAL
+     ========================================================= */
+  .closing {
+    text-align: center;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.5rem;
+    background: #f3f1ec;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .closing h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    margin-bottom: 1rem;
+  }
+
+  .closing p {
+    color: var(--text-soft);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer.site {
+    padding: 3rem 0 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+
+  footer.site .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer.site a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Enlaces a proyectos hermanos: discretos, separados del bloque legal */
+  footer.site .siblings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer.site .siblings span { color: #a9a69d; }
+
+  footer.site a:hover { color: var(--accent-dark); border-bottom-color: var(--accent); }
+
+  footer.site .legal { font-size: 0.75rem; color: #93908a; }
+
+  /* =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     ========================================================= */
+  .wa {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(60, 70, 35, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .wa:hover { background: var(--accent-dark); transform: scale(1.06); }
+
+  .wa svg { width: 27px; height: 27px; fill: #fff; }
+
+  /* Etiqueta accesible solo para lectores de pantalla */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     APARICIÓN SUAVE AL HACER SCROLL (mejora progresiva)
+     ========================================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+
+  /* =========================================================
+     LISTA DE ARTÍCULOS DEL BLOG
+     ========================================================= */
+  .articles { display: grid; gap: 0; border-top: 1px solid var(--line); }
+
+  .article-row {
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  @media (min-width: 760px) {
+    .article-row { grid-template-columns: 120px 1fr auto; align-items: baseline; }
+  }
+
+  .article-row .date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  .article-row h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.3s ease;
+  }
+
+  .article-row:hover h3 { color: var(--accent-dark); }
+
+  .article-row .more {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+
+  /* =========================================================
+     CONMUTADOR DE IDIOMA
+     ========================================================= */
+  .lang-switch {
+    position: fixed;
+    top: 0.85rem;
+    right: 0.85rem;
+    z-index: 60;
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0.5rem 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+
+  /* Badge de idiomas del hero */
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-dark);
+    background: rgba(138, 154, 91, 0.07);
+  }
+
+  .lang-badge svg { width: 14px; height: 14px; fill: currentColor; flex: 0 0 auto; }
+
+  /* =========================================================
+     CITA SOBRE EL PROCESO (sustituye a los testimonios)
+     ========================================================= */
+  .process-quote {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-text {
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text);
+    margin: 0 0 1.8rem;
+    text-wrap: balance;
+  }
+
+  .process-rule {
+    display: block;
+    width: 42px;
+    height: 1px;
+    margin: 0 auto 1.2rem;
+    background: var(--accent);
+  }
+
+  .process-sig {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 600px) {
+    /* En móvil la cita se integra con el resto sin romper el ritmo vertical */
+    .process-quote { border-left: 0; border-right: 0; }
+  }
+
+  /* ===== Artículo ===== */
+  .article-head { padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.2rem, 3vw, 2rem); }
+  .article-head h1 { font-size: clamp(1.85rem, 4.2vw, 2.9rem); max-width: 24ch; margin-bottom: 1.3rem; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); }
+  .article-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .prose { max-width: 68ch; padding-bottom: clamp(2rem, 5vw, 3rem); }
+  .prose p { font-size: 1.04rem; font-weight: 300; line-height: 1.85; color: #43413e; margin-bottom: 1.4rem; }
+  .prose h2 { font-size: clamp(1.28rem, 2.5vw, 1.55rem); margin: 2.8rem 0 1rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line); }
+  .prose h2 .step { display: block; margin-bottom: 0.45rem; font-family: var(--sans); font-size: 0.68rem;
+    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-dark); }
+  .prose h3 { font-size: 1.08rem; margin: 1.9rem 0 0.7rem; }
+  .prose ul { margin: 0 0 1.4rem; padding-left: 1.2rem; }
+  .prose li { font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: #43413e; margin-bottom: 0.55rem; }
+  .prose strong { font-weight: 600; color: var(--text); }
+  .prose blockquote { margin: 1.8rem 0; background: #f3f1ec; }
+  .note { margin: 2.4rem 0 0; padding: 1.3rem 1.5rem; border: 1px solid var(--line);
+    border-radius: var(--radius); font-size: 0.86rem; font-weight: 300; line-height: 1.7;
+    color: var(--text-soft); background: var(--card); }
+  .backlink { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1.6rem 0 0;
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-soft); text-decoration: none; transition: color 0.3s ease; }
+  .backlink:hover { color: var(--accent-dark); }
+  .cta-box { margin-top: 3rem; padding: clamp(1.8rem, 4vw, 2.6rem); background: #f3f1ec;
+    border-radius: var(--radius); text-align: center; }
+  .cta-box h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-bottom: 0.8rem; border: 0; padding-top: 0; }
+  .cta-box p { color: var(--text-soft); font-weight: 300; margin-bottom: 1.6rem; }
+  .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .related h2 { font-size: 1rem !important; margin: 0 0 1rem !important; padding: 0 !important;
+    border: 0 !important; font-family: var(--sans); font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent-dark); }
+  .related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+  .related li a { display: block; padding: 1rem 1.2rem; text-decoration: none; background: var(--card);
+    border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--serif);
+    font-size: 1.02rem; line-height: 1.5; color: var(--text);
+    transition: border-color 0.3s ease, color 0.3s ease; }
+  .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+  /* ===== Conmutador de idioma ===== */
+  .lang-switch {
+    position: fixed; top: 0.85rem; right: 0.85rem; z-index: 60;
+    display: flex; border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; padding: 0.5rem 0.8rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--text-soft); cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
+  <header class="article-head">
+    <div class="wrap">
+      <a class="backlink" href="https://luissandovalpsico.github.io/">← <span data-es="Volver al inicio" data-en="Back to home">Volver al inicio</span></a>
+      <span class="eyebrow" style="margin-top:2rem;" data-es="Terapia" data-en="Therapy">Terapia</span>
+      <h1 data-es="Cómo elegir un psicólogo online (sin equivocarte en el intento)" data-en="How to choose an online psychologist (and get it right)">Cómo elegir un psicólogo online (sin equivocarte en el intento)</h1>
+      <div class="article-meta">
+        <span data-es="Lectura de 7 minutos" data-en="7-minute read">Lectura de 7 minutos</span>
+        <span data-es="Por Luis Sandoval, psicólogo" data-en="By Luis Sandoval, psychologist">Por Luis Sandoval, psicólogo</span>
+      </div>
+      <hr class="hairline" style="margin-top:2rem;">
+    </div>
+  </header>
+
+  <article class="wrap prose" data-lang-block="es">
+
+    <p>
+      Elegir psicólogo por internet se parece demasiado a elegir cualquier otra
+      cosa por internet: hay muchas opciones, todas se presentan bien y es difícil
+      saber cuál te va a servir. La diferencia es que aquí no estás comprando un
+      producto, estás decidiendo con quién vas a hablar de las cosas que más te
+      cuestan.
+    </p>
+    <p>
+      Esta es la lista de lo que conviene mirar, en el orden en que yo lo miraría.
+    </p>
+    <h2>Primero: la formación, y se puede comprobar</h2>
+    <p>
+      Psicólogo es quien tiene el título de Psicología. Psicoterapeuta es quien,
+      además, tiene formación específica en psicoterapia. Y hay palabras que
+      <strong>no</strong> son títulos regulados: «coach», «terapeuta holístico»,
+      «acompañante emocional», «consultor». No significa que quien las use sea
+      deshonesto, pero significa que no puedes verificar qué estudió.
+    </p>
+    <p>
+      Lo mínimo que deberías poder encontrar en su web: titulación, formación
+      específica, y si ejerce con número de colegiado. Si no aparece nada de eso,
+      pregúntalo sin vergüenza. Un profesional serio lo responde sin incomodarse.
+    </p>
+    <h2>Segundo: el encuadre</h2>
+    <p>
+      El encuadre es el conjunto de reglas de trabajo, y es lo que distingue a un
+      profesional de alguien que «da charlas». Debería decirte, antes de empezar:
+    </p>
+    <ul>
+      <li>Cuánto dura una sesión y cada cuánto se propone.</li>
+      <li>Cómo se paga, cuánto cuesta y qué pasa si cancelas.</li>
+      <li>Qué ocurre con lo que cuentas (confidencialidad y sus límites legales).</li>
+      <li>Cuándo y cómo se revisa si el proceso está funcionando.</li>
+    </ul>
+    <p>
+      Si nada de esto está definido, no es que sea informal: es que no hay marco
+      donde apoyarse cuando la cosa se ponga difícil.
+    </p>
+    <blockquote>
+      <p>«Un psicólogo que no puede explicar cómo trabaja en dos minutos no tiene claro cómo trabaja.»</p>
+    </blockquote>
+    <h2>Tercero: la tecnología, y su reverso</h2>
+    <p>
+      La videollamada funciona para la mayoría de procesos. Pero conviene
+      preguntar por las herramientas: qué plataforma usa, si la sesión se graba
+      (debería ser no, o pedirte permiso explícito), y qué pasa si se corta la
+      conexión a mitad.
+    </p>
+    <p>
+      Un detalle que mucha gente no sabe: en terapia online, el lugar desde el que
+      te conectas importa. Si no tienes un espacio donde puedas hablar sin que te
+      oigan, dímelo antes de reservar y buscamos una solución (auriculares,
+      horario, respuestas cortas). No es un detalle menor.
+    </p>
+    <h2>Cuarto: cómo te hace sentir en la primera conversación</h2>
+    <p>
+      La relación terapéutica es la variable que mejor predice el resultado, más
+      que la técnica concreta. Y eso no se sabe leyendo una web: se sabe hablando.
+    </p>
+    <p>
+      Fíjate en tres cosas en la primera sesión:
+    </p>
+    <ul>
+      <li>¿Te interrumpe o te deja terminar?</li>
+      <li>¿Te explica lo que está entendiendo, o solo pregunta?</li>
+      <li>¿Puedes decir «no estoy de acuerdo» sin que se incomode?</li>
+    </ul>
+    <p>
+      La tercera es la más importante. Un buen psicólogo no necesita tener razón;
+      necesita que tú puedas discrepar.
+    </p>
+    <h2>Señales de alarma</h2>
+    <ul>
+      <li><strong>Promesas de resultado.</strong> «En tres sesiones lo resolvemos»,
+          «garantizado», «método infalible».</li>
+      <li><strong>Diagnósticos en la primera sesión.</strong> Diagnosticar requiere
+          tiempo y evaluación.</li>
+      <li><strong>Contacto fuera de horario sin motivo clínico.</strong></li>
+      <li><strong>Presión para comprar paquetes</strong> de sesiones por adelantado.</li>
+      <li><strong>Nada de información profesional verificable</strong> en su web.</li>
+    </ul>
+    <h2>Lo que sí es normal</h2>
+    <p>
+      Que la primera sesión sea rara. Que no sepas qué contar. Que salgas sin
+      haber resuelto nada: la primera sesión es una entrevista, no un tratamiento.
+      Que dudes si encajas. Todo eso es parte del proceso.
+    </p>
+    <p>
+      También es normal cambiar de profesional. Si tras dos o tres sesiones sientes
+      que no funciona, no es un fracaso tuyo ni una falta de compromiso: es
+      información útil. Dilo y busca otra persona.
+    </p>
+
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias."
+       data-en="This article is for general information and does not replace a professional assessment or emergency care.">
+      Este texto tiene carácter divulgativo y no sustituye a una evaluación
+      profesional ni a la atención de un servicio de urgencias.
+    </p>
+
+    <div class="related">
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <ul>
+        <li><a href="https://luissandovalpsico.github.io/blog/necesito-terapia.html">Cómo saber si necesitas terapia</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h2 data-es="Si ya estás en ese punto" data-en="If you are already at that point">Si ya estás en ese punto</h2>
+      <p data-es="50 minutos para ver si encajamos, sin compromiso de continuar." data-en="50 minutes to see whether we fit, with no commitment to continue.">50 minutos para ver si encajamos, sin compromiso de continuar.</p>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
+      <p style="margin-top:1rem;font-size:0.85rem;">
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="wrap prose" data-lang-block="en" hidden>
+
+    <p>
+      Choosing a psychologist online looks too much like choosing anything else
+      online: many options, all of them presented well, and it is hard to know
+      which one will actually help. The difference is that here you are not buying
+      a product; you are deciding who you will talk to about the things that cost
+      you most.
+    </p>
+    <p>
+      Here is what to look at, in the order I would look at it.
+    </p>
+    <h2>First: training — and it can be checked</h2>
+    <p>
+      A psychologist is someone with a Psychology degree. A psychotherapist is
+      someone who, in addition, has specific training in psychotherapy. And there
+      are words that are <strong>not</strong> regulated titles: «coach», «holistic
+      therapist», «emotional companion», «consultant». It does not mean the person
+      using them is dishonest, but it does mean you cannot verify what they studied.
+    </p>
+    <p>
+      The minimum you should be able to find on their site: degree, specific
+      training, and whether they practise with a professional registration number.
+      If none of that appears, ask. A serious professional answers without discomfort.
+    </p>
+    <h2>Second: the framework</h2>
+    <p>
+      The framework is the set of working rules, and it is what separates a
+      professional from someone who «gives talks». Before starting, they should
+      tell you:
+    </p>
+    <ul>
+      <li>How long a session lasts and how often it is proposed.</li>
+      <li>How payment works, how much it costs and what happens if you cancel.</li>
+      <li>What happens with what you tell them (confidentiality and its legal limits).</li>
+      <li>When and how you will review whether the process is working.</li>
+    </ul>
+    <p>
+      If none of this is defined, it is not that they are informal: it is that
+      there is no frame to lean on when things get difficult.
+    </p>
+    <blockquote>
+      <p>«A psychologist who cannot explain how they work in two minutes does not have it clear how they work.»</p>
+    </blockquote>
+    <h2>Third: the technology, and its flip side</h2>
+    <p>
+      Video call works for most processes. But it is worth asking about the tools:
+      which platform is used, whether the session is recorded (it should not be,
+      or only with your explicit permission), and what happens if the connection
+      drops mid-session.
+    </p>
+    <p>
+      A detail many people ignore: in online therapy, where you connect from
+      matters. If you do not have a place where you can speak without being heard,
+      say so before booking and find a solution (headphones, timing, short answers).
+      It is not a small detail.
+    </p>
+    <h2>Fourth: how they make you feel in the first conversation</h2>
+    <p>
+      The therapeutic relationship is the variable that best predicts the outcome,
+      more than the specific technique. And that is not known by reading a website:
+      it is known by talking.
+    </p>
+    <p>
+      Watch three things in the first session:
+    </p>
+    <ul>
+      <li>Do they interrupt you, or let you finish?</li>
+      <li>Do they explain what they are understanding, or only ask questions?</li>
+      <li>Can you say «I disagree» without them getting uncomfortable?</li>
+    </ul>
+    <p>
+      The third one matters most. A good psychologist does not need to be right;
+      they need you to be able to disagree.
+    </p>
+    <h2>Red flags</h2>
+    <ul>
+      <li><strong>Promises of results.</strong> «We will solve it in three sessions»,
+          «guaranteed», «foolproof method».</li>
+      <li><strong>Diagnosis in the first session.</strong> Diagnosing takes time and
+          assessment.</li>
+      <li><strong>Out-of-hours contact without a clinical reason.</strong></li>
+      <li><strong>Pressure to buy session packages</strong> in advance.</li>
+      <li><strong>No verifiable professional information</strong> on their site.</li>
+    </ul>
+    <h2>What is normal</h2>
+    <p>
+      For the first session to feel odd. For you not to know what to say. For you
+      to leave without having solved anything: the first session is an interview,
+      not a treatment. For you to doubt whether it fits. All of that is part of it.
+    </p>
+    <p>
+      Changing professional is also normal. If after two or three sessions you feel
+      it is not working, it is not your failure or a lack of commitment: it is
+      useful information. Say it and look for someone else.
+    </p>
+
+    <p class="note" data-es="Este texto tiene carácter divulgativo y no sustituye a una evaluación profesional ni a la atención de un servicio de urgencias."
+       data-en="This article is for general information and does not replace a professional assessment or emergency care.">
+      Este texto tiene carácter divulgativo y no sustituye a una evaluación
+      profesional ni a la atención de un servicio de urgencias.
+    </p>
+
+    <div class="related">
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <ul>
+        <li><a href="https://luissandovalpsico.github.io/blog/necesito-terapia.html">Cómo saber si necesitas terapia</a></li>
+        <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h2 data-es="Si ya estás en ese punto" data-en="If you are already at that point">Si ya estás en ese punto</h2>
+      <p data-es="50 minutos para ver si encajamos, sin compromiso de continuar." data-en="50 minutes to see whether we fit, with no commitment to continue.">50 minutos para ver si encajamos, sin compromiso de continuar.</p>
+      <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas" data-es="Ver tarifas y modalidad" data-en="See fees and format">Ver tarifas y modalidad</a>
+      <p style="margin-top:1rem;font-size:0.85rem;">
+        <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);" data-es="O escríbeme directamente por WhatsApp" data-en="Or write to me directly on WhatsApp">O escríbeme directamente por WhatsApp</a>
+      </p>
+    </div>
+  </article>
+
+  <footer class="site">
+    <div class="wrap inner">
+      <span>© 2026 Luis Sandoval · Psicología</span>
+      <span><a href="mailto:luissandovalpsico2.0@gmail.com">luissandovalpsico2.0@gmail.com</a></span>
+      <span class="legal" data-es="Aviso legal · Privacidad" data-en="Legal notice · Privacy">Aviso legal · Privacidad</span>
+    </div>
+    <div class="wrap siblings">
+      <span data-es="Proyecto hermano:" data-en="Sister project:">Proyecto hermano:</span>
+      <a href="https://luissandovalpsico.github.io/gourmet-restaurant/" target="_blank" rel="noopener">Fuego &amp; Raíz</a>
+      <a href="https://luissandovalpsico.github.io/documental/" target="_blank" rel="noopener">The Heart of the Beast</a>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/573135578578" aria-label="Escribir por WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"/></svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <script>
+  (function () {
+    const bEs = document.getElementById('btn-es'), bEn = document.getElementById('btn-en');
+    const bloques = document.querySelectorAll('[data-lang-block]');
+    function aplicar(lang) {
+      bloques.forEach(b => { b.hidden = b.getAttribute('data-lang-block') !== lang; });
+      document.querySelectorAll('header [data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      document.documentElement.lang = lang;
+      bEs.setAttribute('aria-pressed', lang === 'es');
+      bEn.setAttribute('aria-pressed', lang === 'en');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    bEs.addEventListener('click', () => aplicar('es'));
+    bEn.addEventListener('click', () => aplicar('en'));
+    let g = 'es';
+    try { g = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (g === 'en') aplicar('en');
+  })();
+  </script>
+
+</body>
+</html>
