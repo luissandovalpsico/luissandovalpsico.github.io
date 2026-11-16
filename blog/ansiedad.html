@@ -623,9 +623,33 @@
     font-size: 1.02rem; line-height: 1.5; color: var(--text);
     transition: border-color 0.3s ease, color 0.3s ease; }
   .related li a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+  /* ===== Conmutador de idioma ===== */
+  .lang-switch {
+    position: fixed; top: 0.85rem; right: 0.85rem; z-index: 60;
+    display: flex; border: 1px solid var(--line); border-radius: 999px;
+    overflow: hidden; background: rgba(249, 248, 246, 0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; padding: 0.5rem 0.8rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--text-soft); cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .lang-switch button:hover { color: var(--text); }
+  .lang-switch button[aria-pressed="true"]:hover { color: #fff; }
 </style>
 </head>
 <body>
+
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" id="btn-es" aria-pressed="true">ES</button>
+    <button type="button" id="btn-en" aria-pressed="false">EN</button>
+  </div>
+
 
   <header class="article-head">
     <div class="wrap">
@@ -642,14 +666,14 @@
 
   <article class="wrap prose">
 
-    <p>
+    <p data-es="Si has llegado hasta aquí buscando el truco que apaga la ansiedad de una vez y para siempre, te voy a decepcionar en el primer párrafo: no existe. Y el hecho de que nadie te lo haya dicho con claridad probablemente forme parte de por qué sigues buscándolo." data-en="If you have come this far looking for the trick that switches anxiety off once and for all, I'm going to disappoint you in the first paragraph: it doesn't exist. And the fact that nobody has told you clearly is probably part of why you keep looking for it.">
       Si has llegado hasta aquí buscando el truco que apaga la ansiedad de una vez
       y para siempre, te voy a decepcionar en el primer párrafo: no existe. Y el
       hecho de que nadie te lo haya dicho con claridad probablemente forme parte
       de por qué sigues buscándolo.
     </p>
 
-    <p>
+    <p data-es="La ansiedad no es un error de fábrica ni una debilidad de carácter. Es tu sistema de alarma funcionando. El problema aparece cuando esa alarma suena con demasiada frecuencia, con demasiada intensidad, o cuando ya no hay nada que justifique que suene. Lo que sí puedes hacer es aprender a relacionarte con ella de otra manera." data-en="Anxiety is not a factory defect or a character weakness. It is your alarm system doing its job. The problem appears when that alarm sounds too often, too loudly, or when there is nothing left to justify it going off. What you can do is learn to relate to it differently.">
       La ansiedad no es un error de fábrica ni una debilidad de carácter. Es tu
       sistema de alarma funcionando. El problema aparece cuando esa alarma suena
       con demasiada frecuencia, con demasiada intensidad, o cuando ya no hay nada
@@ -657,15 +681,15 @@
       con ella de otra manera.
     </p>
 
-    <p>
+    <p data-es="Estos tres pasos no son un método cerrado ni una receta que funcione igual para todo el mundo. Son tres movimientos que, en consulta, suelen ayudar a recuperar algo de margen." data-en="These three steps are not a closed method or a recipe that works the same for everyone. They are three moves that, in practice, usually help you regain some margin.">
       Estos tres pasos no son un método cerrado ni una receta que funcione igual
       para todo el mundo. Son tres movimientos que, en consulta, suelen ayudar a
       recuperar algo de margen.
     </p>
 
-    <h2><span class="step">Paso uno</span>Entender qué te está diciendo</h2>
+    <h2 data-es="Entender qué te está diciendo" data-en="Understand what it is telling you"><h2><span class="step" data-es="Paso uno" data-en="Step one">Paso uno</span>Entender qué te está diciendo</h2>
 
-    <p>
+    <p data-es="La ansiedad casi siempre avisa de algo. A veces acierta: hay una amenaza real, una decisión difícil, una conversación pendiente. Otras veces se equivoca de diana: te avisa de un peligro que ocurrió hace años y que sigue doliendo." data-en="Anxiety almost always gives notice of something. Sometimes it is right: there is a real threat, a difficult decision, a conversation you owe someone. Other times it aims at the wrong target: it warns you about a danger that happened years ago and still hurts.">
       La ansiedad casi siempre avisa de algo. A veces acierta: hay una amenaza
       real, una decisión difícil, una conversación pendiente. Otras veces se
       equivoca de diana: te avisa de un peligro que ocurrió hace años y que sigue
@@ -678,30 +702,30 @@
     </p>
 
     <ul>
-      <li>¿Qué es lo que esta preocupación cree que va a pasar?</li>
-      <li>¿Cuánto de eso es un hecho y cuánto es una interpretación?</li>
-      <li>¿Qué estoy evitando justo ahora que esto aparece?</li>
+      <li data-es="¿Qué es lo que esta preocupación cree que va a pasar?" data-en="What does this worry believe is going to happen?">¿Qué es lo que esta preocupación cree que va a pasar?</li>
+      <li data-es="¿Cuánto de eso es un hecho y cuánto es una interpretación?" data-en="How much of that is a fact and how much is an interpretation?">¿Cuánto de eso es un hecho y cuánto es una interpretación?</li>
+      <li data-es="¿Qué estoy evitando justo ahora que esto aparece?" data-en="What am I avoiding right now, just as this appears?">¿Qué estoy evitando justo ahora que esto aparece?</li>
     </ul>
 
-    <p>
+    <p data-es="No hace falta responder bien. El simple gesto de pasar de «estoy ansioso» a «me estoy diciendo que va a pasar algo malo» cambia el lugar desde donde te miras, y eso ya reduce un poco la intensidad." data-en="You don't have to answer well. The simple move from «I am anxious» to «I am telling myself something bad will happen» changes where you stand when you look at yourself, and that already lowers the intensity a little.">
       No hace falta responder bien. El simple gesto de pasar de «estoy ansioso» a
       «me estoy diciendo que va a pasar algo malo» cambia el lugar desde donde te
       miras, y eso ya reduce un poco la intensidad.
     </p>
 
     <blockquote>
-      <p>«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»</p>
+      <p data-es="«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»" data-en="«Anxiety is not an enemy to defeat; it is a messenger to learn to hear without obeying blindly.»">«La ansiedad no es un enemigo que hay que derrotar; es un mensajero que hay que aprender a escuchar sin obedecerle a ciegas.»</p>
     </blockquote>
 
-    <h2><span class="step">Paso dos</span>Bajar el volumen del cuerpo</h2>
+    <h2 data-es="Bajar el volumen del cuerpo" data-en="Turn the volume down in your body"><h2><span class="step" data-es="Paso dos" data-en="Step two">Paso dos</span>Bajar el volumen del cuerpo</h2>
 
-    <p>
+    <p data-es="Cuando la mente va más rápida que el cuerpo, es difícil razonar. La respiración es la única función automática que puedes tomar y dirigir a voluntad, y por eso sirve como palanca." data-en="When the mind runs faster than the body, reasoning is hard. Breathing is the only automatic function you can take over and direct at will, which is why it works as a lever.">
       Cuando la mente va más rápida que el cuerpo, es difícil razonar. La
       respiración es la única función automática que puedes tomar y dirigir a
       voluntad, y por eso sirve como palanca.
     </p>
 
-    <p>
+    <p data-es="No necesitas ejercicios complicados. Una respiración con la exhalación más larga que la inhalación —por ejemplo, inhalar contando cuatro y exhalar contando seis— durante dos o tres minutos suele bastar para que el sistema nervioso entienda que no hay una amenaza inmediata. Hazlo lento, sin forzar, y sin esperar a sentir nada especial en el primer minuto." data-en="No complicated exercises needed. Breathing with the exhale longer than the inhale —for example, in for four, out for six— for two or three minutes is usually enough for the nervous system to understand there is no immediate threat. Do it slowly, without forcing, and without expecting to feel anything special in the first minute.">
       No necesitas ejercicios complicados. Una respiración con la exhalación más
       larga que la inhalación —por ejemplo, inhalar contando cuatro y exhalar
       contando seis— durante dos o tres minutos suele bastar para que el sistema
@@ -715,24 +739,24 @@
       ordena el desorden de una manera que la mente desbordada no logra por su cuenta.
     </p>
 
-    <h2><span class="step">Paso tres</span>Hacer algo pequeño, no perfecto</h2>
+    <h2 data-es="Hacer algo pequeño, no perfecto" data-en="Do something small, not perfect"><h2><span class="step" data-es="Paso tres" data-en="Step three">Paso tres</span>Hacer algo pequeño, no perfecto</h2>
 
-    <p>
+    <p data-es="La ansiedad crece en la evitación. Cada vez que no haces algo por miedo, el cerebro anota que ese algo era peligroso, y la próxima vez la alarma suena más fuerte." data-en="Anxiety grows in avoidance. Every time you don't do something out of fear, the brain notes that it was dangerous, and next time the alarm is louder.">
       La ansiedad crece en la evitación. Cada vez que no haces algo por miedo, el
       cerebro anota que ese algo era peligroso, y la próxima vez la alarma suena
       más fuerte.
     </p>
 
-    <p>
+    <p data-es="El tercer paso es recuperar el movimiento, pero en dosis mínimas. No se trata de enfrentarte hoy al escenario que te da pánico, sino de dar un paso de un tamaño que puedas sostener sin colapsar." data-en="The third step is to recover movement, in minimal doses. Not facing the scenario that terrifies you today, but taking a step small enough to hold without collapsing.">
       El tercer paso es recuperar el movimiento, pero en dosis mínimas. No se trata
       de enfrentarte hoy al escenario que te da pánico, sino de dar un paso de un
       tamaño que puedas sostener sin colapsar.
     </p>
 
     <ul>
-      <li>Si te da miedo el teléfono, escribe el mensaje y no lo envíes todavía.</li>
-      <li>Si te paraliza una tarea grande, haz los primeros cinco minutos.</li>
-      <li>Si evitabas salir, sal un rato corto, cerca, y vuelve.</li>
+      <li data-es="Si te da miedo el teléfono, escribe el mensaje y no lo envíes todavía." data-en="If phones scare you, write the message and don't send it yet.">Si te da miedo el teléfono, escribe el mensaje y no lo envíes todavía.</li>
+      <li data-es="Si te paraliza una tarea grande, haz los primeros cinco minutos." data-en="If a big task paralyses you, do the first five minutes.">Si te paraliza una tarea grande, haz los primeros cinco minutos.</li>
+      <li data-es="Si evitabas salir, sal un rato corto, cerca, y vuelve." data-en="If you were avoiding going out, go out briefly, close to home, and come back.">Si evitabas salir, sal un rato corto, cerca, y vuelve.</li>
     </ul>
 
     <p>
@@ -741,30 +765,30 @@
       presente, tu cerebro recoge una prueba nueva de que poder con eso era posible.
     </p>
 
-    <h2>Lo que no funciona (o no del todo)</h2>
+    <h2 data-es="Lo que no funciona (o no del todo)" data-en="What doesn't work (or not entirely)">Lo que no funciona (o no del todo)</h2>
 
-    <p>
+    <p data-es="Merece la pena decirlo porque abunda por ahí: forzarte a «pensar en positivo» no suele servir cuando la alarma está activa; lo que consigue a menudo es que te sientas peor por no poder pensar bonito. Y distraerte permanentemente calma un rato, pero no cambia la relación con lo que estás sintiendo." data-en="Worth saying, because it is everywhere: forcing yourself to «think positive» rarely helps when the alarm is active; it often just makes you feel worse for not being able to think nicely. And constantly distracting yourself calms you for a while, but doesn't change your relationship with what you feel.">
       Merece la pena decirlo porque abunda por ahí: forzarte a «pensar en positivo»
       no suele servir cuando la alarma está activa; lo que consigue a menudo es
       que te sientas peor por no poder pensar bonito. Y distraerte permanentemente
       calma un rato, pero no cambia la relación con lo que estás sintiendo.
     </p>
 
-    <p>
+    <p data-es="Tampoco es cierto que hablar de la ansiedad la empeore. Contar lo que te pasa, en un entorno seguro, es una de las formas más eficaces de bajarle el peso." data-en="It is also not true that talking about anxiety makes it worse. Telling what is happening to you, in a safe setting, is one of the most effective ways to lighten it.">
       Tampoco es cierto que hablar de la ansiedad la empeore. Contar lo que te pasa,
       en un entorno seguro, es una de las formas más eficaces de bajarle el peso.
     </p>
 
-    <h2>Cuándo conviene pedir ayuda</h2>
+    <h2 data-es="Cuándo conviene pedir ayuda" data-en="When to seek help">Cuándo conviene pedir ayuda</h2>
 
-    <p>
+    <p data-es="Estos tres pasos son un buen punto de partida, pero no son terapia. Si la ansiedad te está quitando horas de sueño, te impide hacer cosas que antes hacías, ocupa buena parte de tu día o empieza a acompañarse de síntomas físicos sin causa médica clara, merece la pena hablarlo con un profesional." data-en="These three steps are a good starting point, but they are not therapy. If anxiety is taking hours of sleep, preventing you from doing things you used to do, filling a large part of your day, or starting to come with physical symptoms with no clear medical cause, it is worth talking to a professional.">
       Estos tres pasos son un buen punto de partida, pero no son terapia. Si la
       ansiedad te está quitando horas de sueño, te impide hacer cosas que antes
       hacías, ocupa buena parte de tu día o empieza a acompañarse de síntomas
       físicos sin causa médica clara, merece la pena hablarlo con un profesional.
     </p>
 
-    <p>
+    <p data-es="En terapia no voy a prometerte que la ansiedad desaparezca. Te voy a prometer algo más humilde y, creo, más útil: que deje de decidir por ti." data-en="In therapy I won't promise that anxiety disappears. I'll promise something humbler and, I think, more useful: that it stops deciding for you.">
       En terapia no voy a prometerte que la ansiedad desaparezca. Te voy a prometer
       algo más humilde y, creo, más útil: que deje de decidir por ti.
     </p>
@@ -777,8 +801,8 @@
 
 
     <div class="related">
-      <h2>Te puede interesar</h2>
-      <p>Si además de la ansiedad te has dado cuenta de que las discusiones en casa se repiten, o te da miedo empezar, quizá te interese alguna de estas lecturas.</p>
+      <h2 data-es="Te puede interesar" data-en="You may also like">Te puede interesar</h2>
+      <p data-es="Si además de la ansiedad te has dado cuenta de que las discusiones en casa se repiten, o te da miedo empezar, quizá te interese alguna de estas lecturas." data-en="If, besides anxiety, you have noticed the same arguments repeating at home, or you are afraid of starting, one of these might interest you.">Si además de la ansiedad te has dado cuenta de que las discusiones en casa se repiten, o te da miedo empezar, quizá te interese alguna de estas lecturas.</p>
       <ul>
         <li><a href="https://luissandovalpsico.github.io/blog/pareja.html">Por qué repites las mismas discusiones con tu pareja</a></li>
         <li><a href="https://luissandovalpsico.github.io/blog/primera-sesion.html">Terapia online: qué pasa realmente en la primera sesión</a></li>
@@ -786,8 +810,8 @@
     </div>
 
     <div class="cta-box">
-      <h2>Si esto te representa, hablemos</h2>
-      <p>Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita.</p>
+      <h2 data-es="Si esto te representa, hablemos" data-en="If this resonates, let's talk">Si esto te representa, hablemos</h2>
+      <p data-es="Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita." data-en="50-minute sessions, online from any country or in person in Santa Elena, Salinas, Olón and Montañita.">Sesiones de 50 minutos, online desde cualquier país o presencial en Santa Elena, Salinas, Olón y Montañita.</p>
       <a class="btn btn-primary" href="https://luissandovalpsico.github.io/#tarifas">Ver tarifas y modalidad</a>
       <p style="margin-top:1rem;font-size:0.85rem;">
         <a href="https://luissandovalpsico.github.io/#contacto" style="color:var(--accent-dark);">O escríbeme directamente por WhatsApp</a>
@@ -814,5 +838,27 @@
     <span class="sr-only">WhatsApp</span>
   </a>
 
+
+  <script>
+  /* Conmutador ES / EN por atributos data-es / data-en */
+  (function () {
+    const bEs = document.getElementById('btn-es'), bEn = document.getElementById('btn-en');
+    function aplicar(lang) {
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (t !== null) el.textContent = t;
+      });
+      document.documentElement.lang = lang;
+      bEs.setAttribute('aria-pressed', lang === 'es');
+      bEn.setAttribute('aria-pressed', lang === 'en');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    bEs.addEventListener('click', () => aplicar('es'));
+    bEn.addEventListener('click', () => aplicar('en'));
+    let g = 'es';
+    try { g = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    if (g === 'en') aplicar('en');
+  })();
+  </script>
 </body>
 </html>
